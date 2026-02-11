@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cmw7el3gm45ha"]
+
+[ext_resource type="Texture2D" uid="uid://cnrj5exjed3j3" path="res://assets/oak_woods_v1.0/character/char_blue.png" id="1_7hspe"]
+[ext_resource type="Script" uid="uid://ptwkxd0kwlea" path="res://scripts/player_character_1.gd" id="1_ygxty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygxty"]
+size = Vector2(94, 117)
+
+[node name="PlayerCharacter1" type="CharacterBody2D" unique_id=1187410425]
+script = ExtResource("1_ygxty")
+
+[node name="PlayerCollision1" type="CollisionShape2D" parent="." unique_id=72982275]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_ygxty")
+
+[node name="PlayerSprite1" type="Sprite2D" parent="." unique_id=1978231807]
+texture = ExtResource("1_7hspe")
