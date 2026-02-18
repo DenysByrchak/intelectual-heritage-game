@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://c5107oa7fw2wj" path="res://scripts/state_machine.gd" id="3_fn1oa"]
 [ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_idle.gd" id="4_gswgg"]
 [ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_follow.gd" id="5_uuj25"]
-[ext_resource type="PackedScene" uid="uid://ywnt715ak1yr" path="res://scenes/enemy/killzone.tscn" id="6_0eymr"]
+[ext_resource type="Script" uid="uid://bh1w2y25dwvhg" path="res://scripts/head_hitbox.gd" id="6_0eymr"]
+[ext_resource type="Script" uid="uid://b7o14ese4f3se" path="res://scripts/body_hitbox.gd" id="7_uvpse"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvpse"]
 atlas = ExtResource("1_gf6v6")
@@ -173,6 +174,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywj6y"]
 radius = 5.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuj25"]
+size = Vector2(12, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eymr"]
+size = Vector2(14, 8)
+
 [node name="Snake" type="CharacterBody2D" unique_id=624323907]
 script = ExtResource("1_bemtk")
 
@@ -201,4 +208,23 @@ script = ExtResource("5_uuj25")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cont3h5tnc77u"
 
-[node name="Killzone" parent="." unique_id=2007181903 instance=ExtResource("6_0eymr")]
+[node name="HeadHitbox" type="Area2D" parent="." unique_id=824982725]
+script = ExtResource("6_0eymr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadHitbox" unique_id=603717632]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_uuj25")
+
+[node name="BodyHitbox" type="Area2D" parent="." unique_id=1335928503]
+script = ExtResource("7_uvpse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox" unique_id=716201330]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_0eymr")
+
+[node name="Timer" type="Timer" parent="BodyHitbox" unique_id=315786672]
+wait_time = 0.6
+
+[connection signal="body_entered" from="HeadHitbox" to="HeadHitbox" method="_on_body_entered"]
+[connection signal="body_entered" from="BodyHitbox" to="BodyHitbox" method="_on_body_entered"]
+[connection signal="timeout" from="BodyHitbox/Timer" to="BodyHitbox" method="_on_timer_timeout"]
