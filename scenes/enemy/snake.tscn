@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c5107oa7fw2wj" path="res://scripts/state_machine.gd" id="3_fn1oa"]
 [ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_idle.gd" id="4_gswgg"]
 [ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_follow.gd" id="5_uuj25"]
+[ext_resource type="PackedScene" uid="uid://ywnt715ak1yr" path="res://scenes/enemy/killzone.tscn" id="6_0eymr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvpse"]
 atlas = ExtResource("1_gf6v6")
@@ -170,7 +171,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywj6y"]
-radius = 8.0
+radius = 5.0
 
 [node name="Snake" type="CharacterBody2D" unique_id=624323907]
 script = ExtResource("1_bemtk")
@@ -200,10 +201,4 @@ script = ExtResource("5_uuj25")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cont3h5tnc77u"
 
-[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=744650959]
-position = Vector2(0, -4)
-target_position = Vector2(9, 0)
-
-[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1041912748]
-position = Vector2(0, -4)
-target_position = Vector2(-9, 0)
+[node name="Killzone" parent="." unique_id=2007181903 instance=ExtResource("6_0eymr")]
