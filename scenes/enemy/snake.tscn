@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0owsvdr84jlm" path="res://assets/oak_woods_v1.0/animals/Snake_Sprites.png" id="1_gf6v6"]
 [ext_resource type="Script" uid="uid://c5107oa7fw2wj" path="res://scripts/state_machine.gd" id="3_fn1oa"]
 [ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_idle.gd" id="4_gswgg"]
+[ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_follow.gd" id="5_uuj25"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvpse"]
 atlas = ExtResource("1_gf6v6")
@@ -187,9 +188,22 @@ shape = SubResource("CircleShape2D_ywj6y")
 
 [node name="StateMachine" type="Node" parent="." unique_id=279115888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_fn1oa")
-initial_state = NodePath("EnemyIdle")
+initial_state = NodePath("Follow")
 
-[node name="EnemyIdle" type="Node" parent="StateMachine" unique_id=555678763 node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=555678763 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_gswgg")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bmassq77juo0e"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=1570902517 node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_uuj25")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cont3h5tnc77u"
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=744650959]
+position = Vector2(0, -4)
+target_position = Vector2(9, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1041912748]
+position = Vector2(0, -4)
+target_position = Vector2(-9, 0)
