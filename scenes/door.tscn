@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://diea7d4qjq1ks"]
+
+[ext_resource type="Script" uid="uid://76ojsxdv2eb8" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://c234fgc3wflbv" path="res://assets/oak_woods_v1.0/decorations/sign.png" id="2_83dcw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_la1wf"]
+radius = 30.016663
+
+[node name="Door" type="Node2D" unique_id=1729919535]
+script = ExtResource("1_uvdjg")
+
+[node name="DoorArea" type="Area2D" parent="." unique_id=722445085]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea" unique_id=1085439072]
+shape = SubResource("CircleShape2D_la1wf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275300239]
+texture = ExtResource("2_83dcw")
+
+[node name="Timer" type="Timer" parent="." unique_id=442513956]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="DoorArea" to="." method="_on_door_area_body_entered"]
+[connection signal="body_exited" from="DoorArea" to="." method="_on_door_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
