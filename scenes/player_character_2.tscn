@@ -294,6 +294,5 @@ shape = SubResource("RectangleShape2D_ygxty")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2074479636]
 sprite_frames = SubResource("SpriteFrames_wuu6r")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.33457163
