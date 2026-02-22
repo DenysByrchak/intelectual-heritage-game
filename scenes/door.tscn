@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://76ojsxdv2eb8" path="res://scripts/door.gd" id="1_uvdjg"]
 [ext_resource type="Texture2D" uid="uid://c234fgc3wflbv" path="res://assets/oak_woods_v1.0/decorations/sign.png" id="2_83dcw"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="2_la1wf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_la1wf"]
-radius = 30.016663
+radius = 24.0
 
 [node name="Door" type="Node2D" unique_id=1729919535]
 script = ExtResource("1_uvdjg")
@@ -20,11 +21,11 @@ offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Correct Answer"
+label_settings = ExtResource("2_la1wf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DoorArea" type="Area2D" parent="." unique_id=722445085]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
