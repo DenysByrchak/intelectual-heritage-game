@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://d10vscytcegp8"]
 
 [ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="1_1oe37"]
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_ipkqf"]
+[ext_resource type="Resource" uid="uid://cw720byduv064" path="res://dialogues/test_dialogue.dialogue" id="2_ci5fs"]
 [ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="2_lgcd2"]
 [ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="3_3ksxg"]
 [ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="4_ipkqf"]
@@ -23,12 +25,14 @@ _data = {
 point_count = 2
 
 [node name="PreviewLevel" type="Node2D" unique_id=1865308165]
+script = ExtResource("1_ipkqf")
+dialogue = ExtResource("2_ci5fs")
 
 [node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("1_1oe37")]
-position = Vector2(59, 30)
+position = Vector2(60, 44)
 
 [node name="PlayerCharacter2" parent="." unique_id=1490260247 instance=ExtResource("2_lgcd2")]
-position = Vector2(102, 31)
+position = Vector2(103, 44)
 
 [node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("3_3ksxg")]
 limit_left = -550

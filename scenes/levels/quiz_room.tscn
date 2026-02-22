@@ -68,4 +68,4 @@ enemy = ExtResource("1_ntckl")
 position = Vector2(-56, 57)
 
 [node name="Door" parent="." unique_id=1464154535 instance=ExtResource("8_ld41h")]
-position = Vector2(-288, 57)
+position = Vector2(-327, 57)
