@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnposo4qrjw1w" path="res://scripts/trap_door.gd" id="1_6ledq"]
 [ext_resource type="Texture2D" uid="uid://c234fgc3wflbv" path="res://assets/oak_woods_v1.0/decorations/sign.png" id="2_8jxrf"]
+[ext_resource type="PackedScene" uid="uid://bgcbsvgk2goxy" path="res://scenes/enemy/snake.tscn" id="2_ma562"]
 [ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="2_xv13g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_la1wf"]
@@ -9,6 +10,7 @@ radius = 24.0
 
 [node name="TrapDoor" type="Node2D" unique_id=1729919535]
 script = ExtResource("1_6ledq")
+enemy = ExtResource("2_ma562")
 
 [node name="Label" type="Label" parent="." unique_id=26369395]
 anchors_preset = 15
