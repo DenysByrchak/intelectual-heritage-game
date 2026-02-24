@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d1umvyu72e7no"]
 
 [ext_resource type="Script" uid="uid://h2rfrcn36kdc" path="res://scripts/move_platform.gd" id="1_x72it"]
-[ext_resource type="Texture2D" uid="uid://bsmofgtsvmnk7" path="res://assets/oak_woods_v1.0/decorations/rock_1.png" id="1_xl5pr"]
+[ext_resource type="Texture2D" uid="uid://qh43tnlvh12e" path="res://assets/oak_woods_v1.0/platform.png" id="2_x72it"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x72it"]
-size = Vector2(197, 24)
+size = Vector2(96, 24)
 
 [node name="Platform" type="Node2D" unique_id=693667924]
 script = ExtResource("1_x72it")
@@ -22,7 +22,5 @@ sync_to_physics = false
 [node name="PlatformCollision" type="CollisionShape2D" parent="PlatformPath/PathFollow2D/PlatformAnimatableBody" unique_id=1763928466]
 shape = SubResource("RectangleShape2D_x72it")
 
-[node name="PlatformSprite" type="Sprite2D" parent="PlatformPath/PathFollow2D/PlatformAnimatableBody" unique_id=1223656658]
-position = Vector2(-1.7881393e-07, 0.49999976)
-scale = Vector2(9.900001, 2.2727273)
-texture = ExtResource("1_xl5pr")
+[node name="PlatformSprite" type="Sprite2D" parent="PlatformPath/PathFollow2D/PlatformAnimatableBody" unique_id=1850130530]
+texture = ExtResource("2_x72it")

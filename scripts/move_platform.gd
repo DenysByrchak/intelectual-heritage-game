@@ -2,7 +2,7 @@ extends Node2D
 @onready var platform_path: Path2D = $PlatformPath
 @onready var path_follow_2d: PathFollow2D = $PlatformPath/PathFollow2D
 
-@export var speed : float = 0.5
+@export var speed : float = 0.25
 
 func _ready() -> void:
 	if platform_path.curve == null:
