@@ -9,22 +9,27 @@ extends Camera2D
 @export var margin: Vector2 = Vector2(200, 150)
 
 @export var targets: Array[CharacterBody2D] = []
+var existing_target : CharacterBody2D
 
 func _process(delta: float) -> void:
+	
 	if targets.is_empty():
 		return
 	
 	var center: Vector2 = Vector2.ZERO
 	for target: CharacterBody2D in targets:
-		center += target.global_position
+		if target:
+			existing_target = target
+			center += target.global_position
 	
 	center /= float(targets.size())
 	
 	global_position = global_position.lerp(center, move_speed * delta)
 	
-	var rect: Rect2 = Rect2(targets[0].global_position, Vector2.ZERO)
+	var rect: Rect2 = Rect2(existing_target.global_position, Vector2.ZERO)
 	for target: CharacterBody2D in targets:
-		rect = rect.expand(target.global_position)
+		if target:
+			rect = rect.expand(target.global_position)
 	
 	rect = rect.grow_individual(margin.x, margin.y, margin.x, margin.y)
 	

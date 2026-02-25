@@ -5,8 +5,7 @@
 [ext_resource type="Script" uid="uid://c5107oa7fw2wj" path="res://scripts/state_machine.gd" id="3_fn1oa"]
 [ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_idle.gd" id="4_gswgg"]
 [ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_follow.gd" id="5_uuj25"]
-[ext_resource type="Script" uid="uid://bh1w2y25dwvhg" path="res://scripts/head_hitbox.gd" id="6_0eymr"]
-[ext_resource type="Script" uid="uid://b7o14ese4f3se" path="res://scripts/body_hitbox.gd" id="7_uvpse"]
+[ext_resource type="Script" uid="uid://q2xlly841v1u" path="res://scripts/enemy_logic/snake_attack.gd" id="6_0eymr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvpse"]
 atlas = ExtResource("1_gf6v6")
@@ -126,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r462r")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 10.0
 }, {
@@ -171,16 +170,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ywj6y"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvpse"]
+size = Vector2(14, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvpse"]
+radius = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuj25"]
-size = Vector2(12, 3.5)
+size = Vector2(14, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eymr"]
-size = Vector2(14, 8)
+size = Vector2(9.333334, 6)
 
 [node name="Snake" type="CharacterBody2D" unique_id=624323907]
+collision_layer = 0
 script = ExtResource("1_bemtk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1949073843]
@@ -191,12 +194,19 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453046926]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_ywj6y")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_uvpse")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1779616115]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1512488870]
+shape = SubResource("CircleShape2D_uvpse")
 
 [node name="StateMachine" type="Node" parent="." unique_id=279115888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_fn1oa")
-initial_state = NodePath("Follow")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=555678763 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_gswgg")
@@ -208,23 +218,30 @@ script = ExtResource("5_uuj25")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cont3h5tnc77u"
 
-[node name="HeadHitbox" type="Area2D" parent="." unique_id=824982725]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1897919736 node_paths=PackedStringArray("enemy", "animated_sprite")]
 script = ExtResource("6_0eymr")
+enemy = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+retreat_duration = 1.0
+approach_distance = 23.0
+
+[node name="HeadHitbox" type="Area2D" parent="." unique_id=824982725]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeadHitbox" unique_id=603717632]
-position = Vector2(0, -10)
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_uuj25")
 
 [node name="BodyHitbox" type="Area2D" parent="." unique_id=1335928503]
-script = ExtResource("7_uvpse")
+scale = Vector2(1.5, 1.5)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox" unique_id=716201330]
-position = Vector2(0, -4)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_0eymr")
 
-[node name="Timer" type="Timer" parent="BodyHitbox" unique_id=315786672]
-wait_time = 0.6
-
-[connection signal="body_entered" from="HeadHitbox" to="HeadHitbox" method="_on_body_entered"]
-[connection signal="body_entered" from="BodyHitbox" to="BodyHitbox" method="_on_body_entered"]
-[connection signal="timeout" from="BodyHitbox/Timer" to="BodyHitbox" method="_on_timer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="StateMachine/Idle" method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="HeadHitbox" to="." method="_on_head_hitbox_body_entered"]
+[connection signal="body_entered" from="BodyHitbox" to="." method="_on_body_hitbox_body_entered"]

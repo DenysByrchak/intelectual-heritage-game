@@ -1,9 +1,10 @@
 extends Node
 class_name State
 
-signal Transitioned
+@warning_ignore("unused_signal")
+signal Transitioned(state, new_state_name, body)
 
-func enter():
+func enter(_body):
 	pass
 
 func exit():

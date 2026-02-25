@@ -281,14 +281,14 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="PlayerCharacter1" type="CharacterBody2D" unique_id=1187410425]
+[node name="PlayerCharacter2" type="CharacterBody2D" unique_id=1187410425]
 collision_layer = 2
 script = ExtResource("1_1piiu")
 jump = "p2_up"
 left = "p2_left"
 right = "p2_right"
 
-[node name="PlayerCollision1" type="CollisionShape2D" parent="." unique_id=72982275]
+[node name="PlayerCollision2" type="CollisionShape2D" parent="." unique_id=72982275]
 position = Vector2(1, 12)
 shape = SubResource("RectangleShape2D_ygxty")
 

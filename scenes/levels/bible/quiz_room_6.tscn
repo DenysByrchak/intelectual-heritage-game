@@ -1,27 +1,27 @@
-[gd_scene format=4 uid="uid://cegslgcuu104q"]
+[gd_scene format=4 uid="uid://br15t7ecljca5"]
 
-[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="1_ntckl"]
-[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_syx7o"]
-[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="2_hjt4y"]
-[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="3_ld41h"]
-[ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="4_t01x2"]
-[ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="5_mx3h3"]
-[ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="6_yp8l6"]
-[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="7_ld41h"]
-[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="8_ld41h"]
-[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="9_s15kg"]
-[ext_resource type="PackedScene" uid="uid://d1umvyu72e7no" path="res://scenes/platforming_objects/platform.tscn" id="10_3wkua"]
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_llde2"]
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="2_6e8tg"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="3_0s722"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="4_xa4rl"]
+[ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="5_uix3w"]
+[ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="6_ffma4"]
+[ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="7_wxo5e"]
+[ext_resource type="PackedScene" uid="uid://d1umvyu72e7no" path="res://scenes/platforming_objects/platform.tscn" id="8_wvwb4"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="9_krte6"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="10_buywx"]
+[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="11_m0sqb"]
 
-[node name="QuizRoom" type="Node2D" unique_id=895785735]
-script = ExtResource("1_syx7o")
+[node name="QuizRoom2" type="Node2D" unique_id=895785735]
+script = ExtResource("1_llde2")
 
-[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("1_ntckl")]
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("2_6e8tg")]
 position = Vector2(12, 44)
 
-[node name="PlayerCharacter2" parent="." unique_id=707799033 instance=ExtResource("2_hjt4y")]
+[node name="PlayerCharacter2" parent="." unique_id=707799033 instance=ExtResource("3_0s722")]
 position = Vector2(73, 44)
 
-[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("3_ld41h")]
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("4_xa4rl")]
 limit_left = -230
 limit_top = -90
 limit_right = 590
@@ -31,76 +31,77 @@ max_zoom = 6.0
 margin = Vector2(200, 100)
 targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
 
-[node name="LevelTileMapLayer" parent="." unique_id=1106579294 instance=ExtResource("4_t01x2")]
+[node name="LevelTileMapLayer" parent="." unique_id=1106579294 instance=ExtResource("5_uix3w")]
 tile_map_data = PackedByteArray("AAD5/wMAAQADAA0AAAD6/wMAAQAHAAAAAAD7/wMAAQAHAAAAAAD8/wMAAQAHAAAAAAD9/wMAAQAGAAAAAAD+/wMAAQAHAAAAAAD//wMAAQAHAAAAAAAAAAMAAQAHAAAAAAABAAMAAQAHAAAAAAACAAMAAQAHAAAAAAADAAMAAQAGAAAAAAAEAAMAAQAHAAAAAAAFAAMAAQAGAAAAAAAGAAMAAQAHAAAAAAAHAAMAAQAGAAAAAAAIAAMAAQAGAAAAAAAJAAMAAQAGAAAAAAAKAAMAAQAHAAAAAAALAAMAAQAHAAAAAAAMAAMAAQAGAAAAAAANAAMAAQAHAAAAAAAOAAMAAQAHAAAAAAAPAAMAAQAGAAAAAAAQAAMAAQAGAAAAAAARAAMAAQAHAAAAAAASAAMAAQAGAAAAAAATAAMAAQAHAAAAAAAUAAMAAQACAA0AAAAVAAMAAQABAAEAAAAWAAMAAQABAAEAAAAXAAMAAQABAAEAAAD5/wQAAQABAAEAAAD6/wQAAQABAAEAAAD7/wQAAQABAAEAAAD8/wQAAQABAAEAAAD9/wQAAQABAAEAAAD+/wQAAQABAAEAAAD//wQAAQABAAEAAAAAAAQAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAAEAAQAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAHAAQAAQABAAEAAAAIAAQAAQABAAEAAAAJAAQAAQABAAEAAAAKAAQAAQABAAEAAAALAAQAAQABAAEAAAAMAAQAAQABAAEAAAANAAQAAQABAAEAAAAOAAQAAQABAAEAAAAPAAQAAQABAAEAAAAQAAQAAQABAAEAAAARAAQAAQABAAEAAAASAAQAAQABAAEAAAATAAQAAQABAAEAAAAUAAQAAQABAAEAAAAVAAQAAQABAAEAAAAWAAQAAQABAAEAAAAXAAQAAQABAAEAAAAUAAIAAQAAAAIAAAAUAAEAAQAAAAIAAAAUAAAAAQAAAAEAAAAUAP//AQAAAAIAAAAUAP7/AQAAAAIAAAAUAP3/AQAAAAIAAAAUAPz/AQAFAAAAAAAVAPz/AQAGAAAAAAAVAP3/AQABAAEAAAAVAP7/AQABAAEAAAAVAP//AQABAAEAAAAVAAAAAQABAAEAAAAVAAEAAQABAAEAAAAVAAIAAQABAAEAAAAWAAIAAQABAAEAAAAWAAEAAQABAAEAAAAWAAAAAQABAAEAAAAWAP//AQABAAEAAAAWAP7/AQABAAEAAAAWAP3/AQABAAEAAAAWAPz/AQAGAAAAAAAXAAIAAQABAAEAAAAXAAEAAQABAAEAAAAXAAAAAQABAAEAAAAXAP//AQABAAEAAAAXAP7/AQABAAEAAAAXAP3/AQABAAEAAAAXAPz/AQAGAAAAAAD4/wQAAQABAAEAAAD4/wMAAQABAAEAAAD4/wIAAQABAAEAAAD4/wEAAQABAAEAAAD4/wAAAQABAAEAAAD4////AQABAAEAAAD4//7/AQABAAEAAAD4//3/AQABAAEAAAD4//z/AQAGAAAAAAD5//z/AQAIAAAAAAD5//3/AQADAAIAAAD5//7/AQADAAEAAAD5////AQADAAIAAAD5/wAAAQADAAEAAAD5/wEAAQADAAIAAAD5/wIAAQADAAIAAAD3//z/AQAHAAAAAAD3//3/AQABAAEAAAD3//7/AQABAAEAAAD3////AQABAAEAAAD3/wAAAQABAAEAAAD3/wEAAQABAAEAAAD3/wIAAQABAAEAAAD3/wMAAQABAAEAAAD3/wQAAQABAAEAAAD2//z/AQAFAAAAAAD2//3/AQAAAAIAAAD2//7/AQAAAAIAAAD2////AQAAAAIAAAD2/wIAAQAAAAIAAAD2/wMAAQAAAAIAAAD2/wEAAQAAAAIAAAD2/wAAAQAAAAEAAAD2/wQAAQAAAAEAAAAYAPz/AQAIAAAAAAAYAP3/AQADAAIAAAAYAP7/AQADAAIAAAAYAAAAAQADAAIAAAAYAAEAAQADAAEAAAAYAAIAAQADAAEAAAAYAAMAAQADAAEAAAAYAP//AQADAAEAAAAYAAQAAQADAAEAAAAYAAUAAQADAAEAAAAXAAUAAQABAAEAAAAWAAUAAQABAAEAAAAVAAUAAQABAAEAAAAUAAUAAQABAAEAAAATAAUAAQABAAEAAAASAAUAAQABAAEAAAARAAUAAQABAAEAAAAQAAUAAQABAAEAAAAPAAUAAQABAAEAAAAOAAUAAQABAAEAAAANAAUAAQABAAEAAAAKAAUAAQABAAEAAAAJAAUAAQABAAEAAAAIAAUAAQABAAEAAAALAAUAAQABAAEAAAAMAAUAAQABAAEAAAAHAAUAAQABAAEAAAAGAAUAAQABAAEAAAAFAAUAAQABAAEAAAAEAAUAAQABAAEAAAADAAUAAQABAAEAAAACAAUAAQABAAEAAAABAAUAAQABAAEAAAAAAAUAAQABAAEAAAD//wUAAQABAAEAAAD+/wUAAQABAAEAAAD9/wUAAQABAAEAAAD8/wUAAQABAAEAAAD7/wUAAQABAAEAAAD6/wUAAQABAAEAAAD5/wUAAQABAAEAAAD4/wUAAQABAAEAAAD3/wUAAQABAAEAAAD2/wUAAQAAAAIAAAD2/wYAAQAAAAMAAAD3/wYAAQABAAMAAAD4/wYAAQABAAMAAAD5/wYAAQACAAMAAAD6/wYAAQABAAMAAAD7/wYAAQABAAMAAAD8/wYAAQABAAMAAAD9/wYAAQACAAMAAAD+/wYAAQABAAMAAAD//wYAAQABAAMAAAAAAAYAAQACAAMAAAABAAYAAQACAAMAAAACAAYAAQACAAMAAAADAAYAAQABAAMAAAAEAAYAAQACAAMAAAAFAAYAAQACAAMAAAAGAAYAAQABAAMAAAAHAAYAAQACAAMAAAAIAAYAAQACAAMAAAAJAAYAAQABAAMAAAAKAAYAAQACAAMAAAALAAYAAQACAAMAAAAMAAYAAQABAAMAAAANAAYAAQABAAMAAAAOAAYAAQACAAMAAAAPAAYAAQABAAMAAAAQAAYAAQABAAMAAAARAAYAAQABAAMAAAASAAYAAQABAAMAAAATAAYAAQACAAMAAAAUAAYAAQACAAMAAAAVAAYAAQABAAMAAAAWAAYAAQACAAMAAAAXAAYAAQACAAMAAAAYAAYAAQADAAMAAAA=")
 
 [node name="BG" type="Node2D" parent="." unique_id=1696520473]
 
 [node name="BackgroundForestBack" type="Sprite2D" parent="BG" unique_id=849215623]
 z_index = -3
-texture = ExtResource("5_mx3h3")
+texture = ExtResource("6_ffma4")
 
 [node name="BackgroundForestFront" type="Sprite2D" parent="BG" unique_id=1382497407]
 z_index = -2
-texture = ExtResource("6_yp8l6")
+texture = ExtResource("7_wxo5e")
 
 [node name="BackgroundForestBack2" type="Sprite2D" parent="BG" unique_id=1016812024]
 z_index = -3
 position = Vector2(320, 0)
-texture = ExtResource("5_mx3h3")
+texture = ExtResource("6_ffma4")
 
 [node name="BackgroundForestFront2" type="Sprite2D" parent="BG" unique_id=526643597]
 z_index = -2
 position = Vector2(320, 0)
-texture = ExtResource("6_yp8l6")
+texture = ExtResource("7_wxo5e")
+
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("8_wvwb4")]
+position = Vector2(234, 20)
+
+[node name="Platform2" parent="." unique_id=1740552877 instance=ExtResource("8_wvwb4")]
+position = Vector2(368, 20)
 
 [node name="Quiz Question" type="Label" parent="." unique_id=732303852]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 183.0
-offset_top = -43.0
-offset_right = 425.0
-offset_bottom = -20.0
+offset_left = 159.5
+offset_top = -46.958336
+offset_right = 448.5
+offset_bottom = -16.041668
 grow_horizontal = 2
 grow_vertical = 2
-text = "What was the first thing God created in Genesis 1?"
-label_settings = ExtResource("9_s15kg")
+text = "What was the name of Abraham’s son with Hagar? "
+label_settings = ExtResource("9_krte6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Doors" type="Node2D" parent="." unique_id=1235060473]
+[node name="Doors" type="Node2D" parent="." unique_id=313138599]
 position = Vector2(-198, -1)
 
-[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("7_ld41h")]
-position = Vector2(604, 61)
-
-[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
-text = "Sun/Moon"
-
-[node name="Door" parent="Doors" unique_id=606547055 instance=ExtResource("8_ld41h")]
-position = Vector2(464, 61)
-
-[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
-text = "Light"
-
-[node name="TrapDoor2" parent="Doors" unique_id=1974055093 instance=ExtResource("7_ld41h")]
+[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("10_buywx")]
 position = Vector2(531, 61)
 
-[node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
-text = "The Sky"
+[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
+text = "Isaac"
 
-[node name="TrapDoor" parent="Doors" unique_id=886532548 instance=ExtResource("7_ld41h")]
+[node name="Door" parent="Doors" unique_id=1978393180 instance=ExtResource("11_m0sqb")]
 position = Vector2(393, 61)
+next_level = "res://scenes/levels/bible/bible_level_1.tscn"
+
+[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
+text = "Ishmael"
+
+[node name="TrapDoor2" parent="Doors" unique_id=57747651 instance=ExtResource("10_buywx")]
+position = Vector2(464, 61)
+
+[node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
+text = "Levi"
+
+[node name="TrapDoor" parent="Doors" unique_id=1187985907 instance=ExtResource("10_buywx")]
+position = Vector2(604, 61)
 
 [node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
-text = "The Earth"
-
-[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("10_3wkua")]
-position = Vector2(234, 20)
-
-[node name="Platform2" parent="." unique_id=1740552877 instance=ExtResource("10_3wkua")]
-position = Vector2(368, 20)
+text = "Nathaniel"
 
 [connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
 [connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]

@@ -2,9 +2,7 @@ extends State
 class_name EnemyIdle
 
 @export var enemy: CharacterBody2D
-@export var move_speed = 25.0
-
-var player : CharacterBody2D
+@export var move_speed : float =  15.0
 
 var move_direction : Vector2
 var wander_time : float
@@ -13,11 +11,8 @@ func randomize_wander():
 	move_direction = Vector2(randf_range(-1, 1), 0).normalized()
 	wander_time = randf_range(1,3)
 	
-func enter():
-	if not player:
-		var players = get_tree().get_nodes_in_group("Player")
-		if players.size() > 0:
-			player = players[0] as CharacterBody2D
+func enter(_body):
+	print("Snake Idle")
 	randomize_wander()
 	
 func update(delta: float):
@@ -25,14 +20,10 @@ func update(delta: float):
 		wander_time -= delta
 	else:
 		randomize_wander()
+	
+	enemy.velocity = move_direction * move_speed
 
-func physics_update(delta: float):
-	if enemy:
-		enemy.velocity = move_direction * move_speed
-		
-	var direction = player.global_position - enemy.global_position
-	
-	if direction.length() < 50:
-		print("Follow")
-		Transitioned.emit(self, "Follow")
-	
+
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	Transitioned.emit(self, "follow", body)

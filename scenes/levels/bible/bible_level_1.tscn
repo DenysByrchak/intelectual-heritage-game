@@ -1,0 +1,173 @@
+[gd_scene format=4 uid="uid://djf0b3w2bqjhc"]
+
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_cv03d"]
+[ext_resource type="Resource" uid="uid://cw720byduv064" path="res://dialogues/test_dialogue.dialogue" id="2_i4s1b"]
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="3_76sed"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="4_8obek"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="5_sasye"]
+[ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="6_6kwi3"]
+[ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="7_eowem"]
+[ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="8_degwr"]
+[ext_resource type="PackedScene" uid="uid://bgcbsvgk2goxy" path="res://scenes/enemy/snake.tscn" id="9_v0xc7"]
+[ext_resource type="PackedScene" uid="uid://d1umvyu72e7no" path="res://scenes/platforming_objects/platform.tscn" id="10_e31bw"]
+[ext_resource type="PackedScene" uid="uid://ywnt715ak1yr" path="res://scenes/enemy/killzone.tscn" id="11_uw06v"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="12_cuiwm"]
+[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="13_eehms"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="15_kwyww"]
+
+[node name="BibleLevel1" type="Node2D" unique_id=1865308165]
+script = ExtResource("1_cv03d")
+dialogue = ExtResource("2_i4s1b")
+
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("3_76sed")]
+position = Vector2(-413, 44)
+
+[node name="PlayerCharacter2" parent="." unique_id=1490260247 instance=ExtResource("4_8obek")]
+position = Vector2(-367, 44)
+
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("5_sasye")]
+limit_left = -570
+limit_top = -90
+limit_right = 863
+limit_bottom = 140
+min_zoom = 3.0
+max_zoom = 6.0
+margin = Vector2(200, 100)
+targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
+
+[node name="LevelTileMapLayer" parent="." unique_id=1106579294 instance=ExtResource("6_6kwi3")]
+tile_map_data = PackedByteArray("AAD5/wMAAQAHAAAAAAD6/wMAAQAHAAAAAAD7/wMAAQAHAAAAAAD8/wMAAQAHAAAAAAD9/wMAAQAGAAAAAAD+/wMAAQAGAAAAAAD//wMAAQAHAAAAAAAAAAMAAQAHAAAAAAABAAMAAQAGAAAAAAACAAMAAQAHAAAAAAADAAMAAQAHAAAAAAAEAAMAAQAGAAAAAAAFAAMAAQAGAAAAAAAGAAMAAQAGAAAAAAAOAAMAAQAGAAAAAAAPAAMAAQAGAAAAAAAQAAMAAQAGAAAAAAARAAMAAQAHAAAAAAASAAMAAQAGAAAAAAATAAMAAQAGAAAAAAAUAAMAAQAGAAAAAAAVAAMAAQAGAAAAAAAWAAMAAQAGAAAAAAAXAAMAAQAHAAAAAAD4/wMAAQAGAAAAAAD3/wMAAQAHAAAAAAD2/wMAAQAGAAAAAAD1/wMAAQAHAAAAAAD0/wMAAQAHAAAAAAD0/wQAAQABAAEAAAD1/wQAAQABAAEAAAD2/wQAAQABAAEAAAD3/wQAAQABAAEAAAD4/wQAAQABAAEAAAD5/wQAAQABAAEAAAD6/wQAAQABAAEAAAD7/wQAAQABAAEAAAD8/wQAAQABAAEAAAD9/wQAAQABAAEAAAD+/wQAAQABAAEAAAD//wQAAQABAAEAAAAAAAQAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAAEAAQAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAOAAQAAQABAAEAAAAPAAQAAQABAAEAAAAQAAQAAQABAAEAAAARAAQAAQABAAEAAAASAAQAAQABAAEAAAATAAQAAQABAAEAAADz/wQAAQABAAEAAADy/wQAAQABAAEAAADx/wQAAQABAAEAAADw/wQAAQABAAEAAADv/wQAAQABAAEAAADu/wQAAQABAAEAAADt/wQAAQABAAEAAADs/wQAAQABAAEAAADs/wMAAQAGAAAAAADt/wMAAQAGAAAAAADu/wMAAQAHAAAAAADv/wMAAQAGAAAAAADw/wMAAQAGAAAAAADx/wMAAQAGAAAAAADy/wMAAQAHAAAAAADz/wMAAQAHAAAAAAAUAAQAAQABAAEAAAAVAAQAAQABAAEAAAAWAAQAAQABAAEAAAAXAAQAAQABAAEAAADr/wQAAQABAAEAAADr/wMAAQADAA0AAADr/wIAAQADAAEAAADr/wEAAQADAAIAAADr/wAAAQADAAEAAADr////AQADAAEAAADr//7/AQADAAIAAADr//3/AQADAAEAAADr//z/AQAIAAAAAADq/wQAAQABAAEAAADq/wMAAQABAAEAAADq/wIAAQABAAEAAADq/wEAAQABAAEAAADq/wAAAQABAAEAAADq////AQABAAEAAADq//7/AQABAAEAAADq//3/AQABAAEAAADq//z/AQAGAAAAAADp/wQAAQABAAEAAADp/wMAAQABAAEAAADp/wIAAQABAAEAAADp/wEAAQABAAEAAADp/wAAAQABAAEAAADp////AQABAAEAAADp//7/AQABAAEAAADp//3/AQABAAEAAADp//z/AQAGAAAAAAAHAAQAAQAPAAEAAAAIAAQAAQAPAAEAAAAJAAQAAQAPAAEAAAAKAAQAAQAPAAEAAAALAAQAAQAPAAEAAAAMAAQAAQAPAAEAAAANAAQAAQAPAAEAAAAHAAMAAQAQAAAAAAAIAAMAAQAQAAAAAAAJAAMAAQAPAAAAAAAKAAMAAQAPAAAAAAALAAMAAQAQAAAAAAAMAAMAAQAQAAAAAAANAAMAAQAQAAAAAAAYAAMAAQAHAAAAAAAZAAMAAQAHAAAAAAAYAAQAAQABAAEAAAAZAAQAAQABAAEAAAAaAAQAAQABAAEAAAAaAAMAAQAGAAAAAAAbAAQAAQABAAEAAAAbAAMAAQAHAAAAAAAcAAMAAQAGAAAAAAAcAAQAAQABAAEAAAAdAAQAAQABAAEAAAAdAAMAAQAGAAAAAAAeAAQAAQABAAEAAAAeAAMAAQAHAAAAAAAfAAMAAQAHAAAAAAAfAAQAAQABAAEAAAAgAAQAAQABAAEAAAAhAAQAAQABAAEAAAAhAAMAAQACAA0AAAAgAAMAAQAGAAAAAAAiAAQAAQABAAEAAAAiAAMAAQABAAEAAAAjAAQAAQADAAEAAAAjAAMAAQADAAIAAAAjAAIAAQADAAEAAAAjAAEAAQADAAEAAAAjAAAAAQADAAEAAAAjAP//AQADAAEAAAAjAP7/AQADAAEAAAAjAP3/AQADAAIAAAAjAPz/AQAIAAAAAAAiAPz/AQAHAAAAAAAhAPz/AQAFAAAAAAAhAP3/AQAAAAIAAAAhAP7/AQAAAAEAAAAhAP//AQAAAAIAAAAhAAAAAQAAAAEAAAAhAAEAAQAAAAEAAAAhAAIAAQAAAAIAAAAiAAIAAQABAAEAAAAiAAEAAQABAAEAAAAiAAAAAQABAAEAAAAiAP//AQABAAEAAAAiAP7/AQABAAEAAAAiAP3/AQABAAEAAADo//z/AQAFAAAAAADo//3/AQAAAAEAAADo//7/AQAAAAIAAADo////AQAAAAIAAADo/wAAAQAAAAEAAADo/wEAAQAAAAEAAADo/wIAAQAAAAEAAADo/wMAAQAAAAIAAADo/wQAAQAAAAIAAADo/wUAAQAAAAMAAADp/wUAAQABAAMAAADq/wUAAQACAAMAAADr/wUAAQACAAMAAADs/wUAAQACAAMAAADt/wUAAQABAAMAAADu/wUAAQABAAMAAADv/wUAAQABAAMAAADw/wUAAQACAAMAAADx/wUAAQABAAMAAADy/wUAAQABAAMAAADz/wUAAQABAAMAAAD0/wUAAQABAAMAAAD1/wUAAQACAAMAAAD3/wUAAQABAAMAAAD2/wUAAQABAAMAAAD4/wUAAQACAAMAAAD5/wUAAQACAAMAAAD7/wUAAQACAAMAAAD6/wUAAQABAAMAAAD8/wUAAQACAAMAAAD9/wUAAQABAAMAAAD+/wUAAQACAAMAAAD//wUAAQACAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAMAAAACAAUAAQACAAMAAAADAAUAAQABAAMAAAAEAAUAAQABAAMAAAAFAAUAAQACAAMAAAAGAAUAAQACAAMAAAAPAAUAAQABAAMAAAAQAAUAAQABAAMAAAARAAUAAQACAAMAAAASAAUAAQABAAMAAAATAAUAAQABAAMAAAAUAAUAAQACAAMAAAAVAAUAAQABAAMAAAAWAAUAAQACAAMAAAAXAAUAAQABAAMAAAAYAAUAAQABAAMAAAAZAAUAAQABAAMAAAAaAAUAAQACAAMAAAAbAAUAAQABAAMAAAAcAAUAAQABAAMAAAAdAAUAAQABAAMAAAAeAAUAAQACAAMAAAAfAAUAAQACAAMAAAAgAAUAAQABAAMAAAAhAAUAAQABAAMAAAAiAAUAAQABAAMAAAAjAAUAAQADAAMAAAAOAAUAAQACAAMAAAAHAAUAAQAPAAMAAAAIAAUAAQAPAAMAAAAJAAUAAQAPAAMAAAAKAAUAAQAPAAMAAAALAAUAAQAPAAMAAAAMAAUAAQAPAAMAAAANAAUAAQAPAAMAAAA=")
+
+[node name="BG" type="Node2D" parent="." unique_id=857966688]
+
+[node name="BackgroundForestBack" type="Sprite2D" parent="BG" unique_id=653508173]
+z_index = -3
+texture = ExtResource("7_eowem")
+
+[node name="BackgroundForestFront" type="Sprite2D" parent="BG" unique_id=1862096601]
+z_index = -2
+texture = ExtResource("8_degwr")
+
+[node name="BackgroundForestBack2" type="Sprite2D" parent="BG" unique_id=367295040]
+z_index = -3
+position = Vector2(320, 0)
+texture = ExtResource("7_eowem")
+
+[node name="BackgroundForestFront2" type="Sprite2D" parent="BG" unique_id=666870359]
+z_index = -2
+position = Vector2(320, 0)
+texture = ExtResource("8_degwr")
+
+[node name="BackgroundForestBack3" type="Sprite2D" parent="BG" unique_id=775249181]
+z_index = -3
+position = Vector2(-320, 0)
+texture = ExtResource("7_eowem")
+
+[node name="BackgroundForestFront3" type="Sprite2D" parent="BG" unique_id=45130959]
+z_index = -2
+position = Vector2(-320, 0)
+texture = ExtResource("8_degwr")
+
+[node name="BackgroundForestBack4" type="Sprite2D" parent="BG" unique_id=1409867823]
+z_index = -3
+position = Vector2(640, 0)
+texture = ExtResource("7_eowem")
+
+[node name="BackgroundForestFront4" type="Sprite2D" parent="BG" unique_id=76397280]
+z_index = -2
+position = Vector2(640, 0)
+texture = ExtResource("8_degwr")
+
+[node name="Snake" parent="." unique_id=624323907 instance=ExtResource("9_v0xc7")]
+position = Vector2(-183, 72)
+
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("10_e31bw")]
+position = Vector2(-143, 20)
+
+[node name="Platform2" parent="." unique_id=204228259 instance=ExtResource("10_e31bw")]
+position = Vector2(8, 20)
+
+[node name="Snake2" parent="." unique_id=212115217 instance=ExtResource("9_v0xc7")]
+position = Vector2(-22, 72)
+
+[node name="Killzone" parent="." unique_id=2007181903 instance=ExtResource("11_uw06v")]
+position = Vector2(252.00002, 144.00002)
+scale = Vector2(11.955878, 0.6289519)
+
+[node name="Doors" type="Node2D" parent="." unique_id=644146860]
+position = Vector2(124, -1)
+
+[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("12_cuiwm")]
+position = Vector2(604, 61)
+
+[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
+text = "Sun/Moon"
+
+[node name="Door" parent="Doors" unique_id=1911921736 instance=ExtResource("13_eehms")]
+position = Vector2(464, 61)
+next_level = "res://scenes/levels/bible/quiz_room_1.tscn"
+
+[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
+text = "Light"
+
+[node name="TrapDoor2" parent="Doors" unique_id=1957134205 instance=ExtResource("12_cuiwm")]
+position = Vector2(531, 61)
+
+[node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
+text = "The Sky"
+
+[node name="TrapDoor" parent="Doors" unique_id=1829583455 instance=ExtResource("12_cuiwm")]
+position = Vector2(393, 61)
+
+[node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
+text = "The Earth"
+
+[node name="Quiz Question" type="Label" parent="Doors" unique_id=707431868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 381.0
+offset_top = -41.0
+offset_right = 623.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "What was the first thing God created in Genesis 1?"
+label_settings = ExtResource("15_kwyww")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explanation" type="Label" parent="Doors" unique_id=1005927871]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 170.0
+offset_top = 3.0
+offset_right = 412.0
+offset_bottom = 67.833336
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose correct path 
+to move to the next level.
+You choose by standing together
+on the same path for 3 seconds"
+label_settings = ExtResource("15_kwyww")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Platform4" parent="." unique_id=664828510 instance=ExtResource("10_e31bw")]
+position = Vector2(555, 20)
+
+[node name="Platform5" parent="." unique_id=1270661391 instance=ExtResource("10_e31bw")]
+position = Vector2(692, 20)
+
+[node name="Platform3" parent="." unique_id=1111004951 instance=ExtResource("10_e31bw")]
+position = Vector2(251, 79)
+
+[connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
+[connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]
+
+[editable path="Doors/TrapDoor3"]
+[editable path="Doors/Door"]
+[editable path="Doors/TrapDoor2"]
+[editable path="Doors/TrapDoor"]

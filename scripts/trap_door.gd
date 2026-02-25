@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var timer: Timer = $Timer
 @export var enemy: PackedScene
+@onready var label: Label = $Label
 
 @onready var collision_shape_2d: CollisionShape2D = $DoorArea/CollisionShape2D
 
 var bodies: int = 0
 
-func _on_door_area_body_exited(body: Node2D) -> void:
+func _on_door_area_body_exited(_body: Node2D) -> void:
 	bodies -= 1
 	timer.stop()
 	
@@ -27,8 +28,9 @@ func _on_timer_timeout() -> void:
 		
 	collision_shape_2d.disabled = true
 	bodies = 0
+	label.hide()
 
-func _on_door_area_body_entered(body: Node2D) -> void:
+func _on_door_area_body_entered(_body: Node2D) -> void:
 	bodies += 1
 	if bodies == 2:
 		timer.start()
