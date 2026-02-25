@@ -1,0 +1,7 @@
+~ start
+Narrator: After many generations, humanity became wicked and God decided to wipe out humanity. He saved a single family, led by a man named Noah. Noah built an ark and survived the flood with his family.
+Narrator: After many more generations, God decided to strike a covenant with a man named Abram. He first promised land to Abram in the land of Canaan, so he traveled there with his wife and nephew, Lot. 
+Narrator: Abram struck a covenant with God, changing his name to Abraham to signify the covenant. He had two children, one with the concubine Hagar named Ishmael, and the other with his wife Sarah named Isaac. 
+- Repeat => start
+- Begin level => END
+=> END

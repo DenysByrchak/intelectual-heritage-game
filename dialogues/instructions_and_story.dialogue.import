@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dwfqcwp42536n"
+path="res://.godot/imported/instructions_and_story.dialogue-d8620c40dc536e40e76161c8b05c704f.tres"
+
+[deps]
+
+source_file="res://dialogues/instructions_and_story.dialogue"
+dest_files=["res://.godot/imported/instructions_and_story.dialogue-d8620c40dc536e40e76161c8b05c704f.tres"]
+
+[params]
+
+defaults=true

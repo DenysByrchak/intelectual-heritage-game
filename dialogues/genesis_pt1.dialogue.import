@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ddchycvfg0lki"
+path="res://.godot/imported/genesis_pt1.dialogue-2cf1f478ee5662e434b7fa97f85f515d.tres"
+
+[deps]
+
+source_file="res://dialogues/genesis_pt1.dialogue"
+dest_files=["res://.godot/imported/genesis_pt1.dialogue-2cf1f478ee5662e434b7fa97f85f515d.tres"]
+
+[params]
+
+defaults=true

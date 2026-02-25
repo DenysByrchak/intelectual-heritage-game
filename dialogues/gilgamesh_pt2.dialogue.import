@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bje3o6wmpe3c5"
+path="res://.godot/imported/gilgamesh_pt2.dialogue-e46566a40fcead483f984282179069cf.tres"
+
+[deps]
+
+source_file="res://dialogues/gilgamesh_pt2.dialogue"
+dest_files=["res://.godot/imported/gilgamesh_pt2.dialogue-e46566a40fcead483f984282179069cf.tres"]
+
+[params]
+
+defaults=true

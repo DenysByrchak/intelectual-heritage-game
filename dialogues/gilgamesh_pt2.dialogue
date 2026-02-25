@@ -1,0 +1,9 @@
+~ start
+Narrator: Wrought with grief, Gilgamesh searches for the immortal man Uta-napishti. He travels to the edge of the world, where he encounters the goddess Shiduri and her tavern. He is denied entrance to her tavern, and he threatens to break in.
+Narrator: After discussing his plans with Shiduri, Gilgamesh makes his way across the Waters of Death and reaches the legendary Uta-napishti.  
+Narrator: Uta-napishti recounts his story of the great deluge, in which he says the gods were becoming bothered by humanity’s noise and decided to wipe them out. The god Ea warned Uta-napishthi, who built an ark to withstand the floods. He was granted immortality by the gods after this. 
+Narrator: Hearing this, Gilgamesh asks for a way to become immortal. After failing his first test, Gilgamesh is instructed to retrieve the Plant of Heartbeat from underwater to restore his youth. Upon retrieving the plant and stopping for a rest, a serpent steals the plant, and Gilgamesh becomes distraught once again.
+Narrator: He finally returns to Uruk, where he lives out the rest of his days.
+- Repeat => start
+- Begin level => END
+=> END
