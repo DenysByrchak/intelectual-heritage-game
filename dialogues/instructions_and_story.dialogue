@@ -1,0 +1,10 @@
+~ start
+Narrator: You and your friend decide to boot up a game that you found in the clearance bin at GameStop.
+Narrator: You boot up the game.
+Narrator: Welcome to a simulation of mythology and history. Be prepared and pay attention. It may save your life.
+- Controls
+	Narrator: CONTROLS: Blue: WASD / Red: Arrow Keys.
+- Start again => start
+- End the conversation => END
+Narrator: Welcome to the game.
+=> END

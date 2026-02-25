@@ -1,0 +1,8 @@
+~ start
+Narrator: In the beginning, God first created light. Then he created the sky, land, sea, vegetation, and many more things. From the dust of the ground, he created the first human named Adam. And from his rib he created his counterpart, Eve. 
+Narrator: God created the Garden of Eden for first humans to live in. There existed the Tree of Knowledge of Good and Evil, which granted knowledge, and the Tree of Life, which granted immortality.
+Narrator: The first humans disobeyed God and were cast out from the Garden. They had two children named Cain and Abel.
+Narrator: One day, Cain grew jealous of Abel and murdered him. When confronted by God, Cain said “I do not know; am I my brother’s keeper?” Cain was sent away.
+- Start again => start
+- End the conversation => END
+=> END

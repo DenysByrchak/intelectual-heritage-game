@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://6cwd1ciivotv"
+path="res://.godot/imported/genesis_pt2.dialogue-904fa4f2d08318b7cfd9689aa5224511.tres"
+
+[deps]
+
+source_file="res://dialogues/genesis_pt2.dialogue"
+dest_files=["res://.godot/imported/genesis_pt2.dialogue-904fa4f2d08318b7cfd9689aa5224511.tres"]
+
+[params]
+
+defaults=true
