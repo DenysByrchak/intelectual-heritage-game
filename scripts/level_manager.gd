@@ -6,8 +6,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not dialogue:
+		return
+		
 	player_character_1.set_physics_process(false)
 	player_character_2.set_physics_process(false)
+	
 	
 	DialogueManager.show_dialogue_balloon(dialogue)
 	await DialogueManager.dialogue_ended
