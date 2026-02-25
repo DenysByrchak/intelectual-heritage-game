@@ -1,0 +1,173 @@
+[gd_scene format=4 uid="uid://d3dtnqkb7fu1y"]
+
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_0nqw7"]
+[ext_resource type="Resource" uid="uid://cw720byduv064" path="res://dialogues/test_dialogue.dialogue" id="2_k8rv2"]
+[ext_resource type="PackedScene" uid="uid://bsdijmb70fnwr" path="res://scenes/gilgamesh_tile_map.tscn" id="3_0nqw7"]
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="3_qcugq"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="4_1g6sd"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="5_4v6b8"]
+[ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="7_fq0ge"]
+[ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="8_d0gg8"]
+[ext_resource type="PackedScene" uid="uid://bgcbsvgk2goxy" path="res://scenes/enemy/snake.tscn" id="9_w3bsy"]
+[ext_resource type="PackedScene" uid="uid://d1umvyu72e7no" path="res://scenes/platforming_objects/platform.tscn" id="10_elj4t"]
+[ext_resource type="PackedScene" uid="uid://ywnt715ak1yr" path="res://scenes/enemy/killzone.tscn" id="11_flu67"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="12_bae2h"]
+[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="13_20jb4"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="14_a7fn6"]
+
+[node name="BibleLevel1" type="Node2D" unique_id=1865308165]
+script = ExtResource("1_0nqw7")
+dialogue = ExtResource("2_k8rv2")
+
+[node name="GilgameshTileMap" parent="." unique_id=1492386279 instance=ExtResource("3_0nqw7")]
+tile_map_data = PackedByteArray("AADs/wMAAAACAAAAAADt/wMAAAAEAAAAAADu/wMAAAADAAAAAADv/wMAAAABAAAAAADw/wMAAAACAAAAAADx/wMAAAADAAAAAADy/wMAAAADAAAAAADz/wMAAAADAAAAAAD0/wMAAAABAAAAAAD1/wMAAAABAAAAAAD2/wMAAAADAAAAAAD3/wMAAAACAAAAAAD4/wMAAAACAAAAAAD5/wMAAAABAAAAAAD6/wMAAAACAAAAAAD7/wMAAAACAAAAAAD8/wMAAAABAAAAAAD8/wQAAAADAAMAAAD7/wQAAAABAAQAAAD6/wQAAAABAAQAAAD5/wQAAAAEAAIAAAD4/wQAAAACAAQAAAD3/wQAAAADAAEAAAD2/wQAAAADAAEAAAD1/wQAAAAEAAIAAAD0/wQAAAACAAQAAADz/wQAAAADAAQAAADy/wQAAAACAAMAAADx/wQAAAACAAQAAADw/wQAAAAEAAIAAADv/wQAAAADAAQAAADu/wQAAAAEAAMAAADt/wQAAAABAAMAAADs/wQAAAACAAMAAADr/wQAAAACAAQAAADr/wMAAAAJAAYAAADr/wIAAAAFAAEAAADr/wEAAAAFAAEAAADr/wAAAAAFAAEAAADr////AAAFAAEAAADr//7/AAAFAAEAAADr//3/AAAFAAEAAADr//z/AAAFAAAAAADq/wQAAAABAAIAAADq/wMAAAACAAEAAADq/wIAAAACAAMAAADq/wEAAAACAAMAAADq/wAAAAABAAIAAADq////AAAEAAIAAADq//7/AAAEAAQAAADq//3/AAACAAMAAADq//z/AAADAAAAAADp/wQAAAAAAAEAAADp/wMAAAAAAAQAAADp/wIAAAAAAAEAAADp/wEAAAAAAAMAAADp/wAAAAAAAAIAAADp////AAAAAAIAAADp//7/AAAAAAIAAADp//3/AAAAAAEAAADp//z/AAAAAAAAAAD8/wUAAAABAAUAAAD7/wUAAAAEAAUAAAD6/wUAAAABAAUAAAD5/wUAAAAEAAUAAAD4/wUAAAABAAUAAAD3/wUAAAADAAUAAAD2/wUAAAADAAUAAAD1/wUAAAAEAAUAAAD0/wUAAAAEAAUAAADz/wUAAAADAAUAAADy/wUAAAACAAUAAADx/wUAAAADAAUAAADw/wUAAAADAAUAAADv/wUAAAADAAUAAADu/wUAAAAEAAUAAADt/wUAAAACAAUAAADs/wUAAAADAAUAAADr/wUAAAACAAUAAADq/wUAAAABAAUAAADp/wUAAAAAAAUAAAAGAAUAAAAFAAUAAAAGAAQAAAAFAAMAAAAGAAMAAAAFAAAAAAAFAAUAAAADAAUAAAAFAAQAAAABAAMAAAAFAAMAAAABAAAAAAAEAAUAAAAEAAUAAAAEAAQAAAADAAIAAAAEAAMAAAAEAAAAAAADAAUAAAADAAUAAAADAAQAAAADAAEAAAADAAMAAAACAAAAAAACAAUAAAAEAAUAAAACAAQAAAACAAEAAAACAAMAAAABAAAAAAABAAUAAAADAAUAAAABAAQAAAAEAAMAAAABAAMAAAABAAAAAAAAAAUAAAABAAUAAAAAAAQAAAACAAQAAAAAAAMAAAADAAAAAAD//wUAAAAEAAUAAAD//wQAAAACAAIAAAD//wMAAAABAAAAAAD+/wUAAAAEAAUAAAD+/wQAAAACAAQAAAD+/wMAAAABAAAAAAD9/wUAAAACAAUAAAD9/wQAAAABAAEAAAD9/wMAAAADAAAAAAA=")
+
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("3_qcugq")]
+position = Vector2(-413, 44)
+
+[node name="PlayerCharacter2" parent="." unique_id=1490260247 instance=ExtResource("4_1g6sd")]
+position = Vector2(-367, 44)
+
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("5_4v6b8")]
+limit_left = -570
+limit_top = -90
+limit_right = 863
+limit_bottom = 140
+min_zoom = 3.0
+max_zoom = 6.0
+margin = Vector2(200, 100)
+targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
+
+[node name="BG" type="Node2D" parent="." unique_id=857966688]
+
+[node name="BackgroundForestBack" type="Sprite2D" parent="BG" unique_id=653508173]
+z_index = -3
+texture = ExtResource("7_fq0ge")
+
+[node name="BackgroundForestFront" type="Sprite2D" parent="BG" unique_id=1862096601]
+z_index = -2
+texture = ExtResource("8_d0gg8")
+
+[node name="BackgroundForestBack2" type="Sprite2D" parent="BG" unique_id=367295040]
+z_index = -3
+position = Vector2(320, 0)
+texture = ExtResource("7_fq0ge")
+
+[node name="BackgroundForestFront2" type="Sprite2D" parent="BG" unique_id=666870359]
+z_index = -2
+position = Vector2(320, 0)
+texture = ExtResource("8_d0gg8")
+
+[node name="BackgroundForestBack3" type="Sprite2D" parent="BG" unique_id=775249181]
+z_index = -3
+position = Vector2(-320, 0)
+texture = ExtResource("7_fq0ge")
+
+[node name="BackgroundForestFront3" type="Sprite2D" parent="BG" unique_id=45130959]
+z_index = -2
+position = Vector2(-320, 0)
+texture = ExtResource("8_d0gg8")
+
+[node name="BackgroundForestBack4" type="Sprite2D" parent="BG" unique_id=1409867823]
+z_index = -3
+position = Vector2(640, 0)
+texture = ExtResource("7_fq0ge")
+
+[node name="BackgroundForestFront4" type="Sprite2D" parent="BG" unique_id=76397280]
+z_index = -2
+position = Vector2(640, 0)
+texture = ExtResource("8_d0gg8")
+
+[node name="Snake" parent="." unique_id=624323907 instance=ExtResource("9_w3bsy")]
+position = Vector2(-183, 72)
+
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("10_elj4t")]
+position = Vector2(-143, 20)
+
+[node name="Platform2" parent="." unique_id=204228259 instance=ExtResource("10_elj4t")]
+position = Vector2(8, 20)
+
+[node name="Snake2" parent="." unique_id=212115217 instance=ExtResource("9_w3bsy")]
+position = Vector2(-22, 72)
+
+[node name="Killzone" parent="." unique_id=2007181903 instance=ExtResource("11_flu67")]
+position = Vector2(252.00002, 144.00002)
+scale = Vector2(11.955878, 0.6289519)
+
+[node name="Doors" type="Node2D" parent="." unique_id=644146860]
+position = Vector2(124, -1)
+
+[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("12_bae2h")]
+position = Vector2(604, 61)
+
+[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
+text = "Sun/Moon"
+
+[node name="Door" parent="Doors" unique_id=1911921736 instance=ExtResource("13_20jb4")]
+position = Vector2(464, 61)
+next_level = "res://scenes/levels/bible/quiz_room_1.tscn"
+
+[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
+text = "Light"
+
+[node name="TrapDoor2" parent="Doors" unique_id=1957134205 instance=ExtResource("12_bae2h")]
+position = Vector2(531, 61)
+
+[node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
+text = "The Sky"
+
+[node name="TrapDoor" parent="Doors" unique_id=1829583455 instance=ExtResource("12_bae2h")]
+position = Vector2(393, 61)
+
+[node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
+text = "The Earth"
+
+[node name="Quiz Question" type="Label" parent="Doors" unique_id=707431868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 381.0
+offset_top = -41.0
+offset_right = 623.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "What was the first thing God created in Genesis 1?"
+label_settings = ExtResource("14_a7fn6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explanation" type="Label" parent="Doors" unique_id=1005927871]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 170.0
+offset_top = 3.0
+offset_right = 412.0
+offset_bottom = 67.833336
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose correct path 
+to move to the next level.
+You choose by standing together
+on the same path for 3 seconds"
+label_settings = ExtResource("14_a7fn6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Platform4" parent="." unique_id=664828510 instance=ExtResource("10_elj4t")]
+position = Vector2(555, 20)
+
+[node name="Platform5" parent="." unique_id=1270661391 instance=ExtResource("10_elj4t")]
+position = Vector2(692, 20)
+
+[node name="Platform3" parent="." unique_id=1111004951 instance=ExtResource("10_elj4t")]
+position = Vector2(251, 79)
+
+[connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
+[connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]
+
+[editable path="Doors/TrapDoor3"]
+[editable path="Doors/Door"]
+[editable path="Doors/TrapDoor2"]
+[editable path="Doors/TrapDoor"]
