@@ -11,7 +11,6 @@
 [ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="9_0acoa"]
 [ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="10_r5jnn"]
 [ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="11_jj5co"]
-[ext_resource type="PackedScene" uid="uid://dieyescohvimb" path="res://scenes/levels/bible/quiz_room_5.tscn" id="12_5jlhe"]
 
 [node name="QuizRoom2" type="Node2D" unique_id=895785735]
 script = ExtResource("1_5jlhe")
@@ -87,7 +86,7 @@ text = "Lot"
 
 [node name="Door" parent="Doors" unique_id=1978393180 instance=ExtResource("11_jj5co")]
 position = Vector2(604, 61)
-next_level = ExtResource("12_5jlhe")
+next_level = "res://scenes/levels/bible/quiz_room_5.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
 text = "Noah"

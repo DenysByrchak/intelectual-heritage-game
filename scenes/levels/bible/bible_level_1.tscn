@@ -13,14 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ywnt715ak1yr" path="res://scenes/enemy/killzone.tscn" id="11_uw06v"]
 [ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="12_cuiwm"]
 [ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="13_eehms"]
-[ext_resource type="PackedScene" uid="uid://dsb12sdsfdgb3" path="res://scenes/levels/bible/quiz_room_1.tscn" id="14_atun0"]
 [ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="15_kwyww"]
-
-[sub_resource type="Curve2D" id="Curve2D_cp6gg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1.3333588, 0, 0, 0, 0, 0, 191.99997, 0, 0, 0, 0, 0, 191.99997, 0)
-}
-point_count = 3
 
 [node name="BibleLevel1" type="Node2D" unique_id=1865308165]
 script = ExtResource("1_cv03d")
@@ -101,15 +94,6 @@ position = Vector2(-22, 72)
 position = Vector2(252.00002, 144.00002)
 scale = Vector2(11.955878, 0.6289519)
 
-[node name="Platform3" parent="." unique_id=673910520 instance=ExtResource("10_e31bw")]
-position = Vector2(186.00002, 38)
-
-[node name="PlatformPath" parent="Platform3" index="0" unique_id=1776628922]
-curve = SubResource("Curve2D_cp6gg")
-
-[node name="PathFollow2D" parent="Platform3/PlatformPath" index="0" unique_id=454058083]
-position = Vector2(-1.3333588, 0)
-
 [node name="Doors" type="Node2D" parent="." unique_id=644146860]
 position = Vector2(124, -1)
 
@@ -121,7 +105,7 @@ text = "Sun/Moon"
 
 [node name="Door" parent="Doors" unique_id=1911921736 instance=ExtResource("13_eehms")]
 position = Vector2(464, 61)
-next_level = ExtResource("14_atun0")
+next_level = "res://scenes/levels/bible/quiz_room_1.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
 text = "Light"
@@ -177,10 +161,12 @@ position = Vector2(555, 20)
 [node name="Platform5" parent="." unique_id=1270661391 instance=ExtResource("10_e31bw")]
 position = Vector2(692, 20)
 
+[node name="Platform3" parent="." unique_id=1111004951 instance=ExtResource("10_e31bw")]
+position = Vector2(251, 79)
+
 [connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
 [connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]
 
-[editable path="Platform3"]
 [editable path="Doors/TrapDoor3"]
 [editable path="Doors/Door"]
 [editable path="Doors/TrapDoor2"]

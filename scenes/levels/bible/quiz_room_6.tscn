@@ -11,7 +11,6 @@
 [ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="9_krte6"]
 [ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="10_buywx"]
 [ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="11_m0sqb"]
-[ext_resource type="PackedScene" uid="uid://djf0b3w2bqjhc" path="res://scenes/levels/bible/bible_level_1.tscn" id="12_d6e38"]
 
 [node name="QuizRoom2" type="Node2D" unique_id=895785735]
 script = ExtResource("1_llde2")
@@ -87,7 +86,7 @@ text = "Isaac"
 
 [node name="Door" parent="Doors" unique_id=1978393180 instance=ExtResource("11_m0sqb")]
 position = Vector2(393, 61)
-next_level = ExtResource("12_d6e38")
+next_level = "res://scenes/levels/bible/bible_level_1.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
 text = "Ishmael"
