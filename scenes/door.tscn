@@ -5,9 +5,10 @@
 [ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="2_la1wf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_la1wf"]
-radius = 24.0
+radius = 16.0
 
 [node name="Door" type="Node2D" unique_id=1729919535]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_uvdjg")
 
 [node name="Label" type="Label" parent="." unique_id=1953785369]

@@ -281,7 +281,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="PlayerCharacter1" type="CharacterBody2D" unique_id=1187410425]
+[node name="PlayerCharacter1" type="CharacterBody2D" unique_id=1187410425 groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_ygxty")
 

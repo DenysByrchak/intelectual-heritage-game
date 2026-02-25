@@ -1,9 +1,9 @@
 extends Node
 class_name State
 
-signal Transitioned
+signal Transitioned(state, new_state_name, body)
 
-func enter():
+func enter(_body):
 	pass
 
 func exit():

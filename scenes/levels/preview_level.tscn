@@ -12,15 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="8_3ksxg"]
 [ext_resource type="PackedScene" uid="uid://dcjxvh5bcagnr" path="res://scenes/levels/main_scene.tscn" id="9_ipkqf"]
 
-[sub_resource type="Curve2D" id="Curve2D_06sp8"]
+[sub_resource type="Curve2D" id="Curve2D_ci5fs"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -124, -8, 0, 0, 0, 0, 102, -9)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ej02d"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -270, -28, 0, 0, 0, 0, -52, 36)
+"points": PackedVector2Array(0, 0, 0, 0, -3, -48, 0, 0, 0, 0, 205, -45)
 }
 point_count = 2
 
@@ -77,29 +71,17 @@ z_index = -2
 position = Vector2(-320, 0)
 texture = ExtResource("6_q2o67")
 
-[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("7_10fk6")]
-position = Vector2(-93, 9)
-scale = Vector2(0.5, 0.5)
-
-[node name="PlatformPath" parent="Platform" index="0" unique_id=1776628922]
-curve = SubResource("Curve2D_06sp8")
-
-[node name="PathFollow2D" parent="Platform/PlatformPath" index="0" unique_id=454058083]
-position = Vector2(-124, -8)
-
-[node name="Platform2" parent="." unique_id=456095360 instance=ExtResource("7_10fk6")]
-position = Vector2(267, 6)
-scale = Vector2(0.5, 0.5)
-
-[node name="PlatformPath" parent="Platform2" index="0" unique_id=1776628922]
-curve = SubResource("Curve2D_ej02d")
-
-[node name="PathFollow2D" parent="Platform2/PlatformPath" index="0" unique_id=454058083]
-position = Vector2(-270, -28)
-
 [node name="Door" parent="." unique_id=1729919535 instance=ExtResource("8_3ksxg")]
 position = Vector2(317, 57)
 next_level = ExtResource("9_ipkqf")
 
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("7_10fk6")]
+position = Vector2(-92, 57)
+
+[node name="PlatformPath" parent="Platform" index="0" unique_id=1776628922]
+curve = SubResource("Curve2D_ci5fs")
+
+[node name="PathFollow2D" parent="Platform/PlatformPath" index="0" unique_id=454058083]
+position = Vector2(-3, -48)
+
 [editable path="Platform"]
-[editable path="Platform2"]
