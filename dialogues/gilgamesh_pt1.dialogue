@@ -3,6 +3,6 @@ Narrator: Long before the empires of Rome and Greece, there was the ancient empi
 Narrator: Enkidu lived in the woods among the gazelles for a time, until being spotted by a hunter. The hunter told Gilgamesh about Enkidu, leading to their eventual meeting.
 Narrator: They initially fight but quickly become friends. They decide to venture to the Forest of Cedar to fight the ogre Humbaba. The mother of Gilgamesh, Ninsun, asks the Shamash the Sun god to provide support for the heroes.
 Narrator: After their long journey, they arrive at the Forest and defeat Humbaba. Enkidu then builds a door for the temple of the god Enlil. They do battle with the Bull of Heaven next, after which Enkidu is cursed by the gods and killed.
-- Start again => start
-- End the conversation => END
+- Repeat => start
+- Begin level => END
 => END
