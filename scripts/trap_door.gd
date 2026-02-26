@@ -5,6 +5,8 @@ extends Node2D
 @onready var label: Label = $Label
 @export var max_enemies: int = 3
 @export var min_enemies: int = 1
+@export var min_offset: int = -100
+@export var max_offset: int = 100
 @onready var collision_shape_2d: CollisionShape2D = $DoorArea/CollisionShape2D
 
 var bodies: int = 0
@@ -21,7 +23,7 @@ func _on_timer_timeout() -> void:
 	var enemy_offset : int = 0
 	
 	for i in range(enemy_amount):
-		enemy_offset = randi_range(-100, 100)
+		enemy_offset = randi_range(min_offset, max_offset)
 		
 		var new_enemy = enemy.instantiate()
 		new_enemy.position.x += enemy_offset

@@ -11,7 +11,9 @@ func enter(body):
 	player = body
 
 func physics_update(_delta: float):
-
+	if not player:
+		Transitioned.emit(self, "idle", null)
+		
 	var direction = player.global_position - enemy.global_position
 	direction.y = 0
 	

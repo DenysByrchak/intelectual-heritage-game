@@ -8,6 +8,3 @@ var score: int:
 		emit_signal("score_changed", score)
 	get:
 		return score
-
-func reset_score():
-	score = 0 

@@ -86,7 +86,7 @@ text = "Isaac"
 
 [node name="Door" parent="Doors" unique_id=1978393180 instance=ExtResource("11_m0sqb")]
 position = Vector2(393, 61)
-next_level = "res://scenes/levels/bible/bible_level_1.tscn"
+next_level = "res://scenes/levels/gilgamesh/gilgamesh_level_1.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
 text = "Ishmael"

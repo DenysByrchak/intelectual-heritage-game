@@ -1,5 +1,6 @@
 ~ start
-
+- Skip => END
+- Start the story
 Narrator: You and your friend decide to boot up a game that you found in the clearance bin at GameStop.
 Narrator: You boot up the game.
 Narrator: Welcome to a simulation of mythology and history. Be prepared and pay attention. It may save your life.
@@ -10,6 +11,7 @@ Narrator: In the beginning, God first created light. Then he created the sky, la
 Narrator: God created the Garden of Eden for first humans to live in. There existed the Tree of Knowledge of Good and Evil, which granted knowledge, and the Tree of Life, which granted immortality.
 Narrator: The first humans disobeyed God and were cast out from the Garden. They had two children named Cain and Abel.
 Narrator: One day, Cain grew jealous of Abel and murdered him. When confronted by God, Cain said “I do not know; am I my brother’s keeper?” Cain was sent away.
-- Repeat => start
 - Begin level => END
+- Repeat => start
+
 => END

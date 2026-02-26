@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ca6atbk37v368" path="res://scripts/score_label.gd" id="2_eanys"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eanys"]
+font_size = 18
 
 [node name="PlayerCamera" type="Camera2D" unique_id=1758124941]
 limit_left = -1000
@@ -12,15 +13,14 @@ limit_right = 1000
 limit_bottom = 1000
 script = ExtResource("1_7pa0d")
 
-[node name="Label" type="Label" parent="." unique_id=1573850906]
-anchors_preset = -1
-anchor_left = -0.45700002
-anchor_top = -0.009000001
-anchor_right = -0.42200002
-anchor_bottom = 0.026
-offset_left = -169.0
-offset_top = -85.0
-offset_right = -110.0
-offset_bottom = -62.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1562742847]
+layer = 3
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2016628379]
+offset_right = 22.0
+offset_bottom = 11.166667
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Score"
 label_settings = SubResource("LabelSettings_eanys")
 script = ExtResource("2_eanys")

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cdkaght1ih0u6"]
 
 [ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_d88l8"]
-[ext_resource type="Resource" uid="uid://cw720byduv064" path="res://dialogues/test_dialogue.dialogue" id="2_sf6j2"]
+[ext_resource type="Resource" uid="uid://6cwd1ciivotv" path="res://dialogues/genesis_pt2.dialogue" id="2_627oo"]
 [ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="3_jacn2"]
 [ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="4_b2imf"]
 [ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="5_pad4x"]
@@ -35,7 +35,7 @@ point_count = 2
 
 [node name="BibleLevel2" type="Node2D" unique_id=1865308165]
 script = ExtResource("1_d88l8")
-dialogue = ExtResource("2_sf6j2")
+dialogue = ExtResource("2_627oo")
 
 [node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("3_jacn2")]
 position = Vector2(-413, 44)

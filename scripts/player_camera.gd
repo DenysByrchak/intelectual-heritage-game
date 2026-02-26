@@ -12,7 +12,10 @@ extends Camera2D
 var existing_target : CharacterBody2D
 
 func _process(delta: float) -> void:
-	
+	for target in targets:
+		if not target:
+			return
+			
 	if targets.is_empty():
 		return
 	

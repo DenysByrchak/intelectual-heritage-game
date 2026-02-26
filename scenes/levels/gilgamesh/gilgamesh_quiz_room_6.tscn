@@ -93,7 +93,7 @@ text = "Lion"
 
 [node name="Door" parent="Doors" unique_id=606547055 instance=ExtResource("11_6f3ho")]
 position = Vector2(531, 61)
-next_level = "res://scenes/levels/bible/bible_level_1.tscn"
+next_level = "res://scenes/levels/end_game.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
 text = "Serpent"

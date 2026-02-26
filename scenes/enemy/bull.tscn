@@ -170,6 +170,7 @@ size = Vector2(18.666666, 6)
 [node name="Bull" type="CharacterBody2D" unique_id=624323907]
 collision_layer = 0
 script = ExtResource("1_uh726")
+score_for_kill = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1949073843]
 texture_filter = 1

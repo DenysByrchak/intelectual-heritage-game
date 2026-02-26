@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="5_gxq77"]
 [ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="6_spna6"]
 [ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="7_gqisr"]
-[ext_resource type="Script" uid="uid://c07ftccr7akpe" path="res://scripts/trap_door_end.gd" id="8_ma0m3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_brrnc"]
 font_size = 18
@@ -98,8 +97,11 @@ offset_bottom = 29.125
 label_settings = SubResource("LabelSettings_brrnc")
 
 [node name="TrapDoor" parent="." unique_id=1729919535 instance=ExtResource("7_gqisr")]
-position = Vector2(601, 60)
-script = ExtResource("8_ma0m3")
+position = Vector2(607, 60)
+max_enemies = 50
+min_enemies = 40
+min_offset = -300
+max_offset = 300
 
 [node name="Label" parent="TrapDoor" index="0" unique_id=26369395]
 text = "Next level?"

@@ -7,6 +7,7 @@ var is_dead: bool = false
 @onready var body_hitbox: Area2D = $BodyHitbox
 @onready var detection_area: Area2D = $DetectionArea
 @onready var head_hitbox: Area2D = $HeadHitbox
+@export var score_for_kill: int = 1
 
 func _physics_process(delta): 
 		# Gravity
@@ -43,7 +44,7 @@ func die() -> void:
 		return
 		
 	is_dead = true
-	ScoreManager.score += 1
+	ScoreManager.score += score_for_kill
 	animated_sprite.play("death")
 	set_physics_process(false)
 	
