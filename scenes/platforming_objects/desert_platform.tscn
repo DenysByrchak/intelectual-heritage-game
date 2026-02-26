@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cyelqjfegspbu"]
+
+[ext_resource type="Script" uid="uid://h2rfrcn36kdc" path="res://scripts/move_platform.gd" id="1_ps3no"]
+[ext_resource type="Texture2D" uid="uid://c6r0r2omr2t0u" path="res://assets/desert/desert_plarform.png" id="2_ps3no"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x72it"]
+size = Vector2(96, 15)
+
+[node name="Platform" type="Node2D" unique_id=693667924]
+script = ExtResource("1_ps3no")
+
+[node name="PlatformPath" type="Path2D" parent="." unique_id=1776628922]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlatformPath" unique_id=454058083]
+rotates = false
+loop = false
+
+[node name="PlatformAnimatableBody" type="AnimatableBody2D" parent="PlatformPath/PathFollow2D" unique_id=169751647]
+collision_mask = 0
+sync_to_physics = false
+
+[node name="PlatformCollision" type="CollisionShape2D" parent="PlatformPath/PathFollow2D/PlatformAnimatableBody" unique_id=1763928466]
+position = Vector2(0, -0.49999994)
+shape = SubResource("RectangleShape2D_x72it")
+
+[node name="PlatformSprite" type="Sprite2D" parent="PlatformPath/PathFollow2D/PlatformAnimatableBody" unique_id=1850130530]
+texture = ExtResource("2_ps3no")

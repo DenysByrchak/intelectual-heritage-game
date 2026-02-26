@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c76vuc2u37on0" path="res://scripts/snake.gd" id="1_bemtk"]
 [ext_resource type="Texture2D" uid="uid://c0owsvdr84jlm" path="res://assets/oak_woods_v1.0/animals/Snake_Sprites.png" id="1_gf6v6"]
 [ext_resource type="Script" uid="uid://c5107oa7fw2wj" path="res://scripts/state_machine.gd" id="3_fn1oa"]
-[ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_idle.gd" id="4_gswgg"]
-[ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_follow.gd" id="5_uuj25"]
+[ext_resource type="Script" uid="uid://bmassq77juo0e" path="res://scripts/enemy_logic/enemy_idle.gd" id="4_gswgg"]
+[ext_resource type="Script" uid="uid://cont3h5tnc77u" path="res://scripts/enemy_logic/enemy_follow.gd" id="5_uuj25"]
 [ext_resource type="Script" uid="uid://q2xlly841v1u" path="res://scripts/enemy_logic/snake_attack.gd" id="6_0eymr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvpse"]

@@ -1,0 +1,108 @@
+[gd_scene format=4 uid="uid://s1pooewp21v7"]
+
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_7dqof"]
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="2_bejkj"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="3_qwrae"]
+[ext_resource type="PackedScene" uid="uid://bsdijmb70fnwr" path="res://scenes/gilgamesh_tile_map.tscn" id="4_uk53e"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="5_u5fei"]
+[ext_resource type="Texture2D" uid="uid://n26cq5s0ucx3" path="res://assets/oak_woods_v1.0/background/BG-mountains.png" id="6_u4812"]
+[ext_resource type="Texture2D" uid="uid://bbb1xvf3qc1yd" path="res://assets/oak_woods_v1.0/background/BG-ruins.png" id="7_vhblw"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="8_vt2jn"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="9_y2lab"]
+[ext_resource type="PackedScene" uid="uid://bfulmtvok8lgm" path="res://scenes/enemy/bull.tscn" id="10_jl7iq"]
+[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="11_nriad"]
+[ext_resource type="PackedScene" uid="uid://cyelqjfegspbu" path="res://scenes/platforming_objects/desert_platform.tscn" id="12_hg8k4"]
+
+[node name="GilgameshQuizRoom" type="Node2D" unique_id=895785735]
+script = ExtResource("1_7dqof")
+
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("2_bejkj")]
+position = Vector2(12, 44)
+
+[node name="PlayerCharacter2" parent="." unique_id=707799033 instance=ExtResource("3_qwrae")]
+position = Vector2(73, 44)
+
+[node name="GilgameshTileMap" parent="." unique_id=1492386279 instance=ExtResource("4_uk53e")]
+tile_map_data = PackedByteArray("AAATAAQAAAAEAAEAAAATAAMAAAADAAAAAAASAAQAAAACAAEAAAASAAMAAAAEAAAAAAARAAQAAAADAAMAAAARAAMAAAACAAAAAAAQAAQAAAACAAEAAAAQAAMAAAAEAAAAAAAPAAQAAAADAAMAAAAPAAMAAAABAAAAAAAOAAQAAAABAAQAAAAOAAMAAAAJAAQAAAANAAQAAAABAAMAAAANAAMAAAAIAAQAAAAMAAQAAAAEAAIAAAAMAAMAAAAEAAAAAAALAAQAAAAEAAEAAAALAAMAAAADAAAAAAAKAAQAAAABAAEAAAAKAAMAAAAIAAQAAAAJAAQAAAABAAEAAAAJAAMAAAAJAAQAAAAIAAQAAAAEAAQAAAAIAAMAAAABAAAAAAAHAAQAAAAEAAQAAAAHAAMAAAAEAAAAAAAGAAQAAAABAAQAAAAGAAMAAAAJAAQAAAAFAAQAAAADAAQAAAAFAAMAAAAIAAQAAAAEAAQAAAACAAEAAAAEAAMAAAACAAAAAAADAAQAAAABAAIAAAADAAMAAAABAAAAAAACAAQAAAAEAAQAAAACAAMAAAAJAAQAAAABAAQAAAADAAEAAAABAAMAAAAJAAQAAAAAAAQAAAADAAEAAAAAAAMAAAAIAAQAAAD//wQAAAABAAIAAAD//wMAAAAJAAQAAAD+/wQAAAAEAAMAAAD+/wMAAAADAAAAAAD9/wQAAAADAAIAAAD9/wMAAAADAAAAAAD8/wQAAAABAAQAAAD8/wMAAAAIAAQAAAD7/wQAAAADAAMAAAD7/wMAAAADAAAAAAD6/wQAAAADAAQAAAD6/wMAAAACAAAAAAD5/wQAAAAEAAMAAAD5/wMAAAAJAAQAAAD4/wUAAAADAAEAAAD4/wQAAAAEAAMAAAD4/wMAAAAJAAYAAAD4/wIAAAAFAAIAAAD4/wEAAAAFAAMAAAD4/wAAAAAFAAQAAAD4////AAAHAAMAAAD4//7/AAAHAAIAAAD4//3/AAAFAAIAAAD4//z/AAAFAAAAAAD3/wUAAAACAAIAAAD3/wQAAAAEAAEAAAD3/wMAAAADAAQAAAD3/wIAAAABAAIAAAD3/wEAAAADAAEAAAD3/wAAAAACAAEAAAD3////AAAEAAMAAAD3//7/AAABAAEAAAD3//3/AAACAAIAAAD3//z/AAAEAAAAAAD2/wUAAAADAAQAAAD2/wQAAAADAAIAAAD2/wMAAAABAAEAAAD2/wIAAAABAAIAAAD2/wEAAAABAAIAAAD2/wAAAAAEAAEAAAD2////AAACAAQAAAD2//7/AAAEAAEAAAD2//3/AAACAAMAAAD2//z/AAACAAAAAAD1/wUAAAAAAAEAAAD1/wQAAAAAAAQAAAD1/wMAAAAAAAMAAAD1/wIAAAAAAAQAAAD1/wEAAAAKAAMAAAD1/wAAAAAAAAMAAAD1////AAAAAAMAAAD1//7/AAAKAAMAAAD1//3/AAAAAAIAAAD1//z/AAAAAAAAAAATAAYAAAADAAUAAAATAAUAAAADAAIAAAASAAYAAAADAAUAAAASAAUAAAABAAIAAAARAAYAAAADAAUAAAARAAUAAAAEAAIAAAAQAAYAAAAJAAEAAAAQAAUAAAACAAIAAAAPAAYAAAAJAAEAAAAPAAUAAAAEAAIAAAAOAAYAAAADAAUAAAAOAAUAAAACAAQAAAANAAYAAAACAAUAAAANAAUAAAADAAIAAAAMAAYAAAAIAAEAAAAMAAUAAAADAAQAAAALAAYAAAAEAAUAAAALAAUAAAAEAAIAAAAKAAYAAAAJAAEAAAAKAAUAAAABAAMAAAAJAAYAAAAEAAUAAAAJAAUAAAAEAAIAAAAIAAYAAAAJAAEAAAAIAAUAAAACAAQAAAAHAAYAAAABAAUAAAAHAAUAAAAEAAMAAAAGAAYAAAADAAUAAAAGAAUAAAABAAMAAAAFAAYAAAAIAAEAAAAFAAUAAAAEAAIAAAAEAAYAAAAJAAEAAAAEAAUAAAAEAAMAAAADAAYAAAACAAUAAAADAAUAAAADAAMAAAACAAYAAAAIAAEAAAACAAUAAAABAAIAAAABAAYAAAAEAAUAAAABAAUAAAACAAIAAAAAAAYAAAACAAUAAAAAAAUAAAACAAMAAAD//wYAAAAEAAUAAAD//wUAAAAEAAIAAAD+/wYAAAABAAUAAAD+/wUAAAACAAQAAAD9/wYAAAADAAUAAAD9/wUAAAACAAMAAAD8/wYAAAAIAAEAAAD8/wUAAAACAAQAAAD7/wYAAAAIAAEAAAD7/wUAAAABAAIAAAD6/wYAAAACAAUAAAD6/wUAAAADAAEAAAD5/wYAAAAIAAEAAAD5/wUAAAADAAQAAAD4/wYAAAAJAAEAAAD3/wYAAAAJAAEAAAD2/wYAAAAIAAEAAAD1/wYAAAAAAAUAAAAXAAYAAAAFAAUAAAAXAAUAAAAHAAIAAAAXAAQAAAAHAAMAAAAXAAMAAAAHAAMAAAAXAAIAAAAHAAMAAAAXAAEAAAAFAAEAAAAXAAAAAAAHAAMAAAAXAP//AAAFAAQAAAAXAP7/AAAFAAEAAAAXAP3/AAAHAAIAAAAXAPz/AAAFAAAAAAAWAAYAAAADAAUAAAAWAAUAAAAEAAIAAAAWAAQAAAAEAAEAAAAWAAMAAAAEAAIAAAAWAAIAAAACAAQAAAAWAAEAAAACAAEAAAAWAAAAAAAEAAIAAAAWAP//AAABAAMAAAAWAP7/AAABAAEAAAAWAP3/AAABAAQAAAAWAPz/AAADAAAAAAAVAAYAAAAEAAUAAAAVAAUAAAACAAQAAAAVAAQAAAADAAQAAAAVAAMAAAAEAAMAAAAVAAIAAAACAAIAAAAVAAEAAAAEAAQAAAAVAAAAAAADAAEAAAAVAP//AAAEAAMAAAAVAP7/AAABAAMAAAAVAP3/AAADAAIAAAAVAPz/AAADAAAAAAAUAAYAAAABAAUAAAAUAAUAAAACAAMAAAAUAAQAAAACAAQAAAAUAAMAAAAIAAYAAAAUAAIAAAAAAAQAAAAUAAEAAAAAAAIAAAAUAAAAAAAAAAEAAAAUAP//AAAAAAIAAAAUAP7/AAAKAAIAAAAUAP3/AAAKAAMAAAAUAPz/AAAAAAAAAAA=")
+
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("5_u5fei")]
+limit_left = -250
+limit_top = -90
+limit_right = 570
+limit_bottom = 160
+min_zoom = 3.0
+max_zoom = 6.0
+margin = Vector2(200, 100)
+targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
+
+[node name="BG" type="Node2D" parent="." unique_id=1696520473]
+z_index = -1
+
+[node name="BgMountains" type="Sprite2D" parent="BG" unique_id=1991276910]
+z_index = -1
+position = Vector2(-41, -54)
+texture = ExtResource("6_u4812")
+
+[node name="BgRuins" type="Sprite2D" parent="BG" unique_id=983499724]
+z_index = -1
+position = Vector2(-41, -54)
+texture = ExtResource("7_vhblw")
+
+[node name="BgMountains2" type="Sprite2D" parent="BG" unique_id=353625162]
+position = Vector2(215, -54)
+texture = ExtResource("6_u4812")
+
+[node name="BgRuins2" type="Sprite2D" parent="BG" unique_id=1560690748]
+position = Vector2(215, -54)
+texture = ExtResource("7_vhblw")
+
+[node name="BgMountains3" type="Sprite2D" parent="BG" unique_id=842245121]
+position = Vector2(471, -54)
+texture = ExtResource("6_u4812")
+
+[node name="BgRuins3" type="Sprite2D" parent="BG" unique_id=1056945687]
+position = Vector2(471, -54)
+texture = ExtResource("7_vhblw")
+
+[node name="Quiz Question" type="Label" parent="." unique_id=732303852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = -43.0
+offset_right = 425.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The ogre Humbaba guards the Forest of Oak."
+label_settings = ExtResource("8_vt2jn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Doors" type="Node2D" parent="." unique_id=1235060473]
+position = Vector2(-198, 0)
+
+[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("9_y2lab")]
+position = Vector2(464, 61)
+enemy = ExtResource("10_jl7iq")
+max_enemies = 2
+min_enemies = 0
+
+[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
+text = "True"
+
+[node name="Door" parent="Doors" unique_id=606547055 instance=ExtResource("11_nriad")]
+position = Vector2(531, 61)
+next_level = "res://scenes/levels/gilgamesh/gilgamesh_level_2.tscn"
+
+[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
+text = "False"
+
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("12_hg8k4")]
+position = Vector2(307, 19)
+
+[connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
+[connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]
+
+[editable path="Doors/TrapDoor3"]
+[editable path="Doors/Door"]
