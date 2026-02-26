@@ -43,7 +43,7 @@ func die() -> void:
 		return
 		
 	is_dead = true
-	
+	ScoreManager.score += 1
 	animated_sprite.play("death")
 	set_physics_process(false)
 	

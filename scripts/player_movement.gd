@@ -41,5 +41,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
+	ScoreManager.reset_score()
 	dead.emit()
 	queue_free()

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="4_3o0wh"]
 [ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="5_gxq77"]
 [ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="6_spna6"]
+[ext_resource type="Script" uid="uid://ca6atbk37v368" path="res://scripts/score_label.gd" id="7_3o0wh"]
 [ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="7_gqisr"]
 [ext_resource type="Script" uid="uid://c07ftccr7akpe" path="res://scripts/trap_door_end.gd" id="8_ma0m3"]
 
@@ -82,12 +83,27 @@ offset_bottom = 29.125
 text = "You beat the game!"
 label_settings = SubResource("LabelSettings_brrnc")
 
+[node name="Label4" type="Label" parent="." unique_id=463342547]
+offset_left = -330.0
+offset_top = -24.0
+offset_right = -161.0
+offset_bottom = 1.125
+label_settings = SubResource("LabelSettings_brrnc")
+script = ExtResource("7_3o0wh")
+
 [node name="Label2" type="Label" parent="." unique_id=1284465610]
 offset_left = -6.0
 offset_top = 4.0
 offset_right = 277.0
 offset_bottom = 29.125
 text = "Game made by Denys and Miggy"
+label_settings = SubResource("LabelSettings_brrnc")
+
+[node name="Label3" type="Label" parent="." unique_id=65387290]
+offset_left = 398.0
+offset_top = 4.0
+offset_right = 681.0
+offset_bottom = 29.125
 label_settings = SubResource("LabelSettings_brrnc")
 
 [node name="TrapDoor" parent="." unique_id=1729919535 instance=ExtResource("7_gqisr")]
