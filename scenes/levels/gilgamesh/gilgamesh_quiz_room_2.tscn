@@ -1,0 +1,128 @@
+[gd_scene format=4 uid="uid://cqborm44ub2ax"]
+
+[ext_resource type="Script" uid="uid://l4uq57t53g6s" path="res://scripts/level_manager.gd" id="1_51gdb"]
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="2_0on8n"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="3_4iqay"]
+[ext_resource type="PackedScene" uid="uid://bsdijmb70fnwr" path="res://scenes/gilgamesh_tile_map.tscn" id="4_leoxk"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="5_186xr"]
+[ext_resource type="Texture2D" uid="uid://n26cq5s0ucx3" path="res://assets/oak_woods_v1.0/background/BG-mountains.png" id="6_ccu35"]
+[ext_resource type="Texture2D" uid="uid://bbb1xvf3qc1yd" path="res://assets/oak_woods_v1.0/background/BG-ruins.png" id="7_nggf0"]
+[ext_resource type="LabelSettings" uid="uid://c43s0fcjliogx" path="res://text_label_settings.tres" id="8_m137l"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="9_4m4th"]
+[ext_resource type="PackedScene" uid="uid://bfulmtvok8lgm" path="res://scenes/enemy/bull.tscn" id="10_vg8l7"]
+[ext_resource type="PackedScene" uid="uid://diea7d4qjq1ks" path="res://scenes/door.tscn" id="11_f8jpw"]
+[ext_resource type="PackedScene" uid="uid://cyelqjfegspbu" path="res://scenes/platforming_objects/desert_platform.tscn" id="12_e54ig"]
+
+[node name="GilgameshQuizRoom" type="Node2D" unique_id=895785735]
+script = ExtResource("1_51gdb")
+
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("2_0on8n")]
+position = Vector2(12, 44)
+
+[node name="PlayerCharacter2" parent="." unique_id=707799033 instance=ExtResource("3_4iqay")]
+position = Vector2(73, 44)
+
+[node name="GilgameshTileMap" parent="." unique_id=1492386279 instance=ExtResource("4_leoxk")]
+tile_map_data = PackedByteArray("AAATAAQAAAAEAAEAAAATAAMAAAADAAAAAAASAAQAAAACAAEAAAASAAMAAAAEAAAAAAARAAQAAAADAAMAAAARAAMAAAACAAAAAAAQAAQAAAACAAEAAAAQAAMAAAAEAAAAAAAPAAQAAAADAAMAAAAPAAMAAAABAAAAAAAOAAQAAAABAAQAAAAOAAMAAAAJAAQAAAANAAQAAAABAAMAAAANAAMAAAAIAAQAAAAMAAQAAAAEAAIAAAAMAAMAAAAEAAAAAAALAAQAAAAEAAEAAAALAAMAAAADAAAAAAAKAAQAAAABAAEAAAAKAAMAAAAIAAQAAAAJAAQAAAABAAEAAAAJAAMAAAAJAAQAAAAIAAQAAAAEAAQAAAAIAAMAAAABAAAAAAAHAAQAAAAEAAQAAAAHAAMAAAAEAAAAAAAGAAQAAAABAAQAAAAGAAMAAAAJAAQAAAAFAAQAAAADAAQAAAAFAAMAAAAIAAQAAAAEAAQAAAACAAEAAAAEAAMAAAACAAAAAAADAAQAAAABAAIAAAADAAMAAAABAAAAAAACAAQAAAAEAAQAAAACAAMAAAAJAAQAAAABAAQAAAADAAEAAAABAAMAAAAJAAQAAAAAAAQAAAADAAEAAAAAAAMAAAAIAAQAAAD//wQAAAABAAIAAAD//wMAAAAJAAQAAAD+/wQAAAAEAAMAAAD+/wMAAAADAAAAAAD9/wQAAAADAAIAAAD9/wMAAAADAAAAAAD8/wQAAAABAAQAAAD8/wMAAAAIAAQAAAD7/wQAAAADAAMAAAD7/wMAAAADAAAAAAD6/wQAAAADAAQAAAD6/wMAAAACAAAAAAD5/wQAAAAEAAMAAAD5/wMAAAAJAAQAAAD4/wUAAAADAAEAAAD4/wQAAAAEAAMAAAD4/wMAAAAJAAYAAAD4/wIAAAAFAAIAAAD4/wEAAAAFAAMAAAD4/wAAAAAFAAQAAAD4////AAAHAAMAAAD4//7/AAAHAAIAAAD4//3/AAAFAAIAAAD4//z/AAAFAAAAAAD3/wUAAAACAAIAAAD3/wQAAAAEAAEAAAD3/wMAAAADAAQAAAD3/wIAAAABAAIAAAD3/wEAAAADAAEAAAD3/wAAAAACAAEAAAD3////AAAEAAMAAAD3//7/AAABAAEAAAD3//3/AAACAAIAAAD3//z/AAAEAAAAAAD2/wUAAAADAAQAAAD2/wQAAAADAAIAAAD2/wMAAAABAAEAAAD2/wIAAAABAAIAAAD2/wEAAAABAAIAAAD2/wAAAAAEAAEAAAD2////AAACAAQAAAD2//7/AAAEAAEAAAD2//3/AAACAAMAAAD2//z/AAACAAAAAAD1/wUAAAAAAAEAAAD1/wQAAAAAAAQAAAD1/wMAAAAAAAMAAAD1/wIAAAAAAAQAAAD1/wEAAAAKAAMAAAD1/wAAAAAAAAMAAAD1////AAAAAAMAAAD1//7/AAAKAAMAAAD1//3/AAAAAAIAAAD1//z/AAAAAAAAAAATAAYAAAADAAUAAAATAAUAAAADAAIAAAASAAYAAAADAAUAAAASAAUAAAABAAIAAAARAAYAAAADAAUAAAARAAUAAAAEAAIAAAAQAAYAAAAJAAEAAAAQAAUAAAACAAIAAAAPAAYAAAAJAAEAAAAPAAUAAAAEAAIAAAAOAAYAAAADAAUAAAAOAAUAAAACAAQAAAANAAYAAAACAAUAAAANAAUAAAADAAIAAAAMAAYAAAAIAAEAAAAMAAUAAAADAAQAAAALAAYAAAAEAAUAAAALAAUAAAAEAAIAAAAKAAYAAAAJAAEAAAAKAAUAAAABAAMAAAAJAAYAAAAEAAUAAAAJAAUAAAAEAAIAAAAIAAYAAAAJAAEAAAAIAAUAAAACAAQAAAAHAAYAAAABAAUAAAAHAAUAAAAEAAMAAAAGAAYAAAADAAUAAAAGAAUAAAABAAMAAAAFAAYAAAAIAAEAAAAFAAUAAAAEAAIAAAAEAAYAAAAJAAEAAAAEAAUAAAAEAAMAAAADAAYAAAACAAUAAAADAAUAAAADAAMAAAACAAYAAAAIAAEAAAACAAUAAAABAAIAAAABAAYAAAAEAAUAAAABAAUAAAACAAIAAAAAAAYAAAACAAUAAAAAAAUAAAACAAMAAAD//wYAAAAEAAUAAAD//wUAAAAEAAIAAAD+/wYAAAABAAUAAAD+/wUAAAACAAQAAAD9/wYAAAADAAUAAAD9/wUAAAACAAMAAAD8/wYAAAAIAAEAAAD8/wUAAAACAAQAAAD7/wYAAAAIAAEAAAD7/wUAAAABAAIAAAD6/wYAAAACAAUAAAD6/wUAAAADAAEAAAD5/wYAAAAIAAEAAAD5/wUAAAADAAQAAAD4/wYAAAAJAAEAAAD3/wYAAAAJAAEAAAD2/wYAAAAIAAEAAAD1/wYAAAAAAAUAAAAXAAYAAAAFAAUAAAAXAAUAAAAHAAIAAAAXAAQAAAAHAAMAAAAXAAMAAAAHAAMAAAAXAAIAAAAHAAMAAAAXAAEAAAAFAAEAAAAXAAAAAAAHAAMAAAAXAP//AAAFAAQAAAAXAP7/AAAFAAEAAAAXAP3/AAAHAAIAAAAXAPz/AAAFAAAAAAAWAAYAAAADAAUAAAAWAAUAAAAEAAIAAAAWAAQAAAAEAAEAAAAWAAMAAAAEAAIAAAAWAAIAAAACAAQAAAAWAAEAAAACAAEAAAAWAAAAAAAEAAIAAAAWAP//AAABAAMAAAAWAP7/AAABAAEAAAAWAP3/AAABAAQAAAAWAPz/AAADAAAAAAAVAAYAAAAEAAUAAAAVAAUAAAACAAQAAAAVAAQAAAADAAQAAAAVAAMAAAAEAAMAAAAVAAIAAAACAAIAAAAVAAEAAAAEAAQAAAAVAAAAAAADAAEAAAAVAP//AAAEAAMAAAAVAP7/AAABAAMAAAAVAP3/AAADAAIAAAAVAPz/AAADAAAAAAAUAAYAAAABAAUAAAAUAAUAAAACAAMAAAAUAAQAAAACAAQAAAAUAAMAAAAIAAYAAAAUAAIAAAAAAAQAAAAUAAEAAAAAAAIAAAAUAAAAAAAAAAEAAAAUAP//AAAAAAIAAAAUAP7/AAAKAAIAAAAUAP3/AAAKAAMAAAAUAPz/AAAAAAAAAAA=")
+
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("5_186xr")]
+limit_left = -250
+limit_top = -90
+limit_right = 570
+limit_bottom = 160
+min_zoom = 3.0
+max_zoom = 6.0
+margin = Vector2(200, 100)
+targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
+
+[node name="BG" type="Node2D" parent="." unique_id=1696520473]
+z_index = -1
+
+[node name="BgMountains" type="Sprite2D" parent="BG" unique_id=1991276910]
+z_index = -1
+position = Vector2(-41, -54)
+texture = ExtResource("6_ccu35")
+
+[node name="BgRuins" type="Sprite2D" parent="BG" unique_id=983499724]
+z_index = -1
+position = Vector2(-41, -54)
+texture = ExtResource("7_nggf0")
+
+[node name="BgMountains2" type="Sprite2D" parent="BG" unique_id=353625162]
+position = Vector2(215, -54)
+texture = ExtResource("6_ccu35")
+
+[node name="BgRuins2" type="Sprite2D" parent="BG" unique_id=1560690748]
+position = Vector2(215, -54)
+texture = ExtResource("7_nggf0")
+
+[node name="BgMountains3" type="Sprite2D" parent="BG" unique_id=842245121]
+position = Vector2(471, -54)
+texture = ExtResource("6_ccu35")
+
+[node name="BgRuins3" type="Sprite2D" parent="BG" unique_id=1056945687]
+position = Vector2(471, -54)
+texture = ExtResource("7_nggf0")
+
+[node name="Quiz Question" type="Label" parent="." unique_id=732303852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = -43.0
+offset_right = 425.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Who is Gilgamesh’s mother?"
+label_settings = ExtResource("8_m137l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Doors" type="Node2D" parent="." unique_id=1235060473]
+position = Vector2(-198, 0)
+
+[node name="TrapDoor3" parent="Doors" unique_id=1729919535 instance=ExtResource("9_4m4th")]
+position = Vector2(464, 61)
+enemy = ExtResource("10_vg8l7")
+max_enemies = 2
+min_enemies = 0
+
+[node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
+text = "Nammu"
+
+[node name="Door" parent="Doors" unique_id=606547055 instance=ExtResource("11_f8jpw")]
+position = Vector2(604, 61)
+next_level = "res://scenes/levels/gilgamesh/gilgamesh_quiz_room_3.tscn"
+
+[node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
+text = "Ninsun"
+
+[node name="TrapDoor2" parent="Doors" unique_id=1974055093 instance=ExtResource("9_4m4th")]
+position = Vector2(531, 61)
+enemy = ExtResource("10_vg8l7")
+max_enemies = 2
+min_enemies = 0
+
+[node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
+text = "Ereshkigal"
+
+[node name="TrapDoor" parent="Doors" unique_id=886532548 instance=ExtResource("9_4m4th")]
+position = Vector2(393, 61)
+enemy = ExtResource("10_vg8l7")
+max_enemies = 2
+min_enemies = 0
+
+[node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
+text = "Ishtar"
+
+[node name="Platform" parent="." unique_id=693667924 instance=ExtResource("12_e54ig")]
+position = Vector2(307, 19)
+
+[connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
+[connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]
+
+[editable path="Doors/TrapDoor3"]
+[editable path="Doors/Door"]
+[editable path="Doors/TrapDoor2"]
+[editable path="Doors/TrapDoor"]

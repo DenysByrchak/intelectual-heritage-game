@@ -26,7 +26,7 @@ func _on_head_hitbox_body_entered(body: Node2D) -> void:
 		return
 		
 	if body.velocity.y > 0:
-		print("Snake Died")
+		#print("Died")
 		die()
 		body.velocity.y = -300
 
@@ -34,7 +34,7 @@ func _on_head_hitbox_body_entered(body: Node2D) -> void:
 func _on_body_hitbox_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
-	print("Snake Killed")	
+	#print("Killed")	
 	body.die()
 
 

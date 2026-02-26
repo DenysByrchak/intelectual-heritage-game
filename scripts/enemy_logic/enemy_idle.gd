@@ -12,7 +12,7 @@ func randomize_wander():
 	wander_time = randf_range(1,3)
 	
 func enter(_body):
-	print("Snake Idle")
+	#print("Idle")
 	randomize_wander()
 	
 func update(delta: float):
