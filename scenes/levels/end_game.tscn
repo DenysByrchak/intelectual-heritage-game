@@ -109,3 +109,8 @@ label_settings = SubResource("LabelSettings_brrnc")
 [node name="TrapDoor" parent="." unique_id=1729919535 instance=ExtResource("7_gqisr")]
 position = Vector2(601, 60)
 script = ExtResource("8_ma0m3")
+
+[node name="Label" parent="TrapDoor" index="0" unique_id=26369395]
+text = "Next level?"
+
+[editable path="TrapDoor"]
