@@ -115,6 +115,7 @@ position = Vector2(531, 61)
 
 [node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
 text = "The Sky"
+metadata/_edit_use_anchors_ = true
 
 [node name="TrapDoor" parent="Doors" unique_id=1829583455 instance=ExtResource("12_cuiwm")]
 position = Vector2(393, 61)

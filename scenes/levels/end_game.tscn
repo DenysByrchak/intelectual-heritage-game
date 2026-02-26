@@ -1,0 +1,107 @@
+[gd_scene format=4 uid="uid://bjfdrbp1ogu8m"]
+
+[ext_resource type="PackedScene" uid="uid://cmw7el3gm45ha" path="res://scenes/player_character_1.tscn" id="1_brrnc"]
+[ext_resource type="PackedScene" uid="uid://48l8xodjp1v7" path="res://scenes/player_character_2.tscn" id="2_gqisr"]
+[ext_resource type="PackedScene" uid="uid://5ssu5xuegx33" path="res://scenes/player_camera.tscn" id="3_ma0m3"]
+[ext_resource type="Texture2D" uid="uid://dlcntcenpy1oh" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="4_3o0wh"]
+[ext_resource type="Texture2D" uid="uid://b13b2m2panw7u" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="5_gxq77"]
+[ext_resource type="PackedScene" uid="uid://ddkrdhp738wj" path="res://scenes/level_tile_map_layer.tscn" id="6_spna6"]
+[ext_resource type="PackedScene" uid="uid://nvicanlqufov" path="res://scenes/trap_door.tscn" id="7_gqisr"]
+[ext_resource type="Script" uid="uid://c07ftccr7akpe" path="res://scripts/trap_door_end.gd" id="8_ma0m3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_brrnc"]
+font_size = 18
+
+[node name="EndGame" type="Node2D" unique_id=365117884]
+position = Vector2(-160, -29)
+
+[node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("1_brrnc")]
+position = Vector2(-413, 44)
+
+[node name="PlayerCharacter2" parent="." unique_id=2019902073 instance=ExtResource("2_gqisr")]
+position = Vector2(-367, 44)
+
+[node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("3_ma0m3")]
+limit_left = -733
+limit_top = -121
+limit_right = 700
+limit_bottom = 109
+min_zoom = 3.0
+max_zoom = 6.0
+margin = Vector2(200, 100)
+targets = [NodePath("../PlayerCharacter1"), NodePath("../PlayerCharacter2")]
+
+[node name="BG" type="Node2D" parent="." unique_id=1397987028]
+
+[node name="BackgroundForestBack" type="Sprite2D" parent="BG" unique_id=1229407291]
+z_index = -3
+texture = ExtResource("4_3o0wh")
+
+[node name="BackgroundForestFront" type="Sprite2D" parent="BG" unique_id=1332659460]
+z_index = -2
+texture = ExtResource("5_gxq77")
+
+[node name="BackgroundForestBack2" type="Sprite2D" parent="BG" unique_id=1142751253]
+z_index = -3
+position = Vector2(320, 0)
+texture = ExtResource("4_3o0wh")
+
+[node name="BackgroundForestFront2" type="Sprite2D" parent="BG" unique_id=1501720511]
+z_index = -2
+position = Vector2(320, 0)
+texture = ExtResource("5_gxq77")
+
+[node name="BackgroundForestBack3" type="Sprite2D" parent="BG" unique_id=538503592]
+z_index = -3
+position = Vector2(-320, 0)
+texture = ExtResource("4_3o0wh")
+
+[node name="BackgroundForestFront3" type="Sprite2D" parent="BG" unique_id=237873359]
+z_index = -2
+position = Vector2(-320, 0)
+texture = ExtResource("5_gxq77")
+
+[node name="BackgroundForestBack4" type="Sprite2D" parent="BG" unique_id=777735357]
+z_index = -3
+position = Vector2(640, 0)
+texture = ExtResource("4_3o0wh")
+
+[node name="BackgroundForestFront4" type="Sprite2D" parent="BG" unique_id=513513686]
+z_index = -2
+position = Vector2(640, 0)
+texture = ExtResource("5_gxq77")
+
+[node name="LevelTileMapLayer" parent="." unique_id=1106579294 instance=ExtResource("6_spna6")]
+tile_map_data = PackedByteArray("AAD5/wMAAQAHAAAAAAD6/wMAAQAHAAAAAAD7/wMAAQAHAAAAAAD8/wMAAQAHAAAAAAD9/wMAAQAGAAAAAAD+/wMAAQAGAAAAAAD//wMAAQAHAAAAAAAAAAMAAQAHAAAAAAABAAMAAQAGAAAAAAACAAMAAQAHAAAAAAADAAMAAQAHAAAAAAAEAAMAAQAGAAAAAAAFAAMAAQAGAAAAAAAGAAMAAQAGAAAAAAAOAAMAAQAGAAAAAAAPAAMAAQAGAAAAAAAQAAMAAQAGAAAAAAARAAMAAQAHAAAAAAASAAMAAQAGAAAAAAATAAMAAQAGAAAAAAAUAAMAAQAGAAAAAAAVAAMAAQAGAAAAAAAWAAMAAQAGAAAAAAAXAAMAAQAHAAAAAAD4/wMAAQAGAAAAAAD3/wMAAQAHAAAAAAD2/wMAAQAGAAAAAAD1/wMAAQAHAAAAAAD0/wMAAQAHAAAAAAD0/wQAAQABAAEAAAD1/wQAAQABAAEAAAD2/wQAAQABAAEAAAD3/wQAAQABAAEAAAD4/wQAAQABAAEAAAD5/wQAAQABAAEAAAD6/wQAAQABAAEAAAD7/wQAAQABAAEAAAD8/wQAAQABAAEAAAD9/wQAAQABAAEAAAD+/wQAAQABAAEAAAD//wQAAQABAAEAAAAAAAQAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAAEAAQAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAOAAQAAQABAAEAAAAPAAQAAQABAAEAAAAQAAQAAQABAAEAAAARAAQAAQABAAEAAAASAAQAAQABAAEAAAATAAQAAQABAAEAAADz/wQAAQABAAEAAADy/wQAAQABAAEAAADx/wQAAQABAAEAAADw/wQAAQABAAEAAADv/wQAAQABAAEAAADu/wQAAQABAAEAAADt/wQAAQABAAEAAADs/wQAAQABAAEAAADs/wMAAQAGAAAAAADt/wMAAQAGAAAAAADu/wMAAQAHAAAAAADv/wMAAQAGAAAAAADw/wMAAQAGAAAAAADx/wMAAQAGAAAAAADy/wMAAQAHAAAAAADz/wMAAQAHAAAAAAAUAAQAAQABAAEAAAAVAAQAAQABAAEAAAAWAAQAAQABAAEAAAAXAAQAAQABAAEAAADr/wQAAQABAAEAAADr/wMAAQADAA0AAADr/wIAAQADAAEAAADr/wEAAQADAAIAAADr/wAAAQADAAEAAADr////AQADAAEAAADr//7/AQADAAIAAADr//3/AQADAAEAAADr//z/AQAIAAAAAADq/wQAAQABAAEAAADq/wMAAQABAAEAAADq/wIAAQABAAEAAADq/wEAAQABAAEAAADq/wAAAQABAAEAAADq////AQABAAEAAADq//7/AQABAAEAAADq//3/AQABAAEAAADq//z/AQAGAAAAAADp/wQAAQABAAEAAADp/wMAAQABAAEAAADp/wIAAQABAAEAAADp/wEAAQABAAEAAADp/wAAAQABAAEAAADp////AQABAAEAAADp//7/AQABAAEAAADp//3/AQABAAEAAADp//z/AQAGAAAAAAAHAAQAAQABAAEAAAAIAAQAAQABAAEAAAAJAAQAAQABAAEAAAAKAAQAAQABAAEAAAALAAQAAQABAAEAAAAMAAQAAQABAAEAAAANAAQAAQABAAEAAAAHAAMAAQAGAAAAAAAIAAMAAQAGAAAAAAAJAAMAAQAGAAAAAAAKAAMAAQAGAAAAAAALAAMAAQAGAAAAAAAMAAMAAQAGAAAAAAANAAMAAQAGAAAAAAAYAAMAAQAHAAAAAAAZAAMAAQAHAAAAAAAYAAQAAQABAAEAAAAZAAQAAQABAAEAAAAaAAQAAQABAAEAAAAaAAMAAQAGAAAAAAAbAAQAAQABAAEAAAAbAAMAAQAHAAAAAAAcAAMAAQAGAAAAAAAcAAQAAQABAAEAAAAdAAQAAQABAAEAAAAdAAMAAQAGAAAAAAAeAAQAAQABAAEAAAAeAAMAAQAHAAAAAAAfAAMAAQAHAAAAAAAfAAQAAQABAAEAAAAgAAQAAQABAAEAAAAhAAQAAQABAAEAAAAhAAMAAQACAA0AAAAgAAMAAQAGAAAAAAAiAAQAAQABAAEAAAAiAAMAAQABAAEAAAAjAAQAAQADAAEAAAAjAAMAAQADAAIAAAAjAAIAAQADAAEAAAAjAAEAAQADAAEAAAAjAAAAAQADAAEAAAAjAP//AQADAAEAAAAjAP7/AQADAAEAAAAjAP3/AQADAAIAAAAjAPz/AQAIAAAAAAAiAPz/AQAHAAAAAAAhAPz/AQAFAAAAAAAhAP3/AQAAAAIAAAAhAP7/AQAAAAEAAAAhAP//AQAAAAIAAAAhAAAAAQAAAAEAAAAhAAEAAQAAAAEAAAAhAAIAAQAAAAIAAAAiAAIAAQABAAEAAAAiAAEAAQABAAEAAAAiAAAAAQABAAEAAAAiAP//AQABAAEAAAAiAP7/AQABAAEAAAAiAP3/AQABAAEAAADo//z/AQAFAAAAAADo//3/AQAAAAEAAADo//7/AQAAAAIAAADo////AQAAAAIAAADo/wAAAQAAAAEAAADo/wEAAQAAAAEAAADo/wIAAQAAAAEAAADo/wMAAQAAAAIAAADo/wQAAQAAAAIAAADo/wUAAQAAAAMAAADp/wUAAQABAAMAAADq/wUAAQACAAMAAADr/wUAAQACAAMAAADs/wUAAQACAAMAAADt/wUAAQABAAMAAADu/wUAAQABAAMAAADv/wUAAQABAAMAAADw/wUAAQACAAMAAADx/wUAAQABAAMAAADy/wUAAQABAAMAAADz/wUAAQABAAMAAAD0/wUAAQABAAMAAAD1/wUAAQACAAMAAAD3/wUAAQABAAMAAAD2/wUAAQABAAMAAAD4/wUAAQACAAMAAAD5/wUAAQACAAMAAAD7/wUAAQACAAMAAAD6/wUAAQABAAMAAAD8/wUAAQACAAMAAAD9/wUAAQABAAMAAAD+/wUAAQACAAMAAAD//wUAAQACAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAMAAAACAAUAAQACAAMAAAADAAUAAQABAAMAAAAEAAUAAQABAAMAAAAFAAUAAQACAAMAAAAGAAUAAQACAAMAAAAPAAUAAQABAAMAAAAQAAUAAQABAAMAAAARAAUAAQACAAMAAAASAAUAAQABAAMAAAATAAUAAQABAAMAAAAUAAUAAQACAAMAAAAVAAUAAQABAAMAAAAWAAUAAQACAAMAAAAXAAUAAQABAAMAAAAYAAUAAQABAAMAAAAZAAUAAQABAAMAAAAaAAUAAQACAAMAAAAbAAUAAQABAAMAAAAcAAUAAQABAAMAAAAdAAUAAQABAAMAAAAeAAUAAQACAAMAAAAfAAUAAQACAAMAAAAgAAUAAQABAAMAAAAhAAUAAQABAAMAAAAiAAUAAQABAAMAAAAjAAUAAQADAAMAAAAOAAUAAQABAAMAAAAHAAUAAQABAAMAAAAIAAUAAQABAAMAAAAJAAUAAQABAAMAAAAKAAUAAQABAAMAAAALAAUAAQABAAMAAAAMAAUAAQABAAMAAAANAAUAAQABAAMAAAA=")
+
+[node name="Label" type="Label" parent="." unique_id=611203460]
+offset_left = -330.0
+offset_top = 4.0
+offset_right = -161.0
+offset_bottom = 29.125
+text = "You beat the game!"
+label_settings = SubResource("LabelSettings_brrnc")
+
+[node name="Label2" type="Label" parent="." unique_id=1284465610]
+offset_left = -6.0
+offset_top = 4.0
+offset_right = 277.0
+offset_bottom = 29.125
+text = "Game made by Denys and Miggy"
+label_settings = SubResource("LabelSettings_brrnc")
+
+[node name="Label3" type="Label" parent="." unique_id=65387290]
+offset_left = 398.0
+offset_top = 4.0
+offset_right = 681.0
+offset_bottom = 29.125
+label_settings = SubResource("LabelSettings_brrnc")
+
+[node name="TrapDoor" parent="." unique_id=1729919535 instance=ExtResource("7_gqisr")]
+position = Vector2(601, 60)
+script = ExtResource("8_ma0m3")
+
+[node name="Label" parent="TrapDoor" index="0" unique_id=26369395]
+text = "Next level?"
+
+[editable path="TrapDoor"]

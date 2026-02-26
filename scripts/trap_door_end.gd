@@ -3,8 +3,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @export var enemy: PackedScene
 @onready var label: Label = $Label
-@export var max_enemies: int = 3
-@export var min_enemies: int = 1
+
 @onready var collision_shape_2d: CollisionShape2D = $DoorArea/CollisionShape2D
 
 var bodies: int = 0
@@ -16,12 +15,11 @@ func _on_door_area_body_exited(_body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	ScoreManager.score -= 3
-	var enemy_amount = randi_range(min_enemies,max_enemies)
+	var enemy_amount = randi_range(25,50)
 	var enemy_offset : int = 0
 	
 	for i in range(enemy_amount):
-		enemy_offset = randi_range(-100, 100)
+		enemy_offset = randi_range(-500, 500)
 		
 		var new_enemy = enemy.instantiate()
 		new_enemy.position.x += enemy_offset
