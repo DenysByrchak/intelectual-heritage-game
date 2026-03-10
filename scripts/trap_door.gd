@@ -18,7 +18,7 @@ func _on_door_area_body_exited(_body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	ScoreManager.score -= 3
+	ScoreManager.score -= 2
 	var enemy_amount = randi_range(min_enemies,max_enemies)
 	var enemy_offset : int = 0
 	

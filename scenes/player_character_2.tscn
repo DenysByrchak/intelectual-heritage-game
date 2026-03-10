@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ptwkxd0kwlea" path="res://scripts/player_movement.gd" id="1_1piiu"]
 [ext_resource type="Texture2D" uid="uid://bex1cxrt3by3n" path="res://assets/oak_woods_v1.0/character/char_red.png" id="2_1piiu"]
+[ext_resource type="Script" uid="uid://p068s0f7d1if" path="res://scripts/ui/p2_name_label.gd" id="3_nksw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygxty"]
 size = Vector2(22, 32)
@@ -296,3 +297,18 @@ shape = SubResource("RectangleShape2D_ygxty")
 sprite_frames = SubResource("SpriteFrames_wuu6r")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Label" type="Label" parent="." unique_id=750907649]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 11.0
+offset_bottom = -3.8125
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 4
+text = "Player Name"
+script = ExtResource("3_nksw8")
