@@ -1,11 +1,11 @@
-~ start
+~ start 
 - Skip => END
 - Start the story
-Narrator: Long before the empires of Rome and Greece, there was the ancient empire of Sumer and its city-state Uruk. Leading Uruk was a man named Gilgamesh. He tyrannized his people, causing the gods to intervene by creating a man named Enkidu to stop Gilgamesh.
-Narrator: Enkidu lived in the woods among the gazelles for a time, until being spotted by a hunter. The hunter told Gilgamesh about Enkidu, leading to their eventual meeting.
-Narrator: They initially fight but quickly become friends. They decide to venture to the Forest of Cedar to fight the ogre Humbaba. The mother of Gilgamesh, Ninsun, asks the Shamash the Sun god to provide support for the heroes.
-Narrator: After their long journey, they arrive at the Forest and defeat Humbaba. Enkidu then builds a door for the temple of the god Enlil. They do battle with the Bull of Heaven next, after which Enkidu is cursed by the gods and killed.
-- Begin level => END
-- Repeat => start
+Narrator: Long before the empires of Rome and Greece, there was the ancient empire of Sumer and its city-state Uruk. Leading Uruk was a man named Gilgamesh. He tyrannized his people, causing the gods to intervene by creating a man named Enkidu to stop Gilgamesh. 
+Narrator: Enkidu lived in the woods among the gazelles for a time, until being spotted by a hunter. The hunter told Gilgamesh about Enkidu, leading to their eventual meeting. 
+Narrator: They fought initially but became friends. They decided to venture to the Forest of Cedar to fight the ogre Humbaba. The mother of Gilgamesh, Ninsun, whose father is Anu, asks the Sun god Shamash to provide support for the heroes. 
+Narrator: After their long journey, they arrived at the Forest and defeated Humbaba. Enkidu then built a door for the temple of the god Enlil. They did battle with the Bull of Heaven next, after which Enkidu is cursed by the gods and killed. 
+- Repeat => start 
+- Begin level => END 
 
 => END
