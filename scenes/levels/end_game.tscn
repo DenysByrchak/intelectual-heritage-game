@@ -13,7 +13,6 @@
 font_size = 18
 
 [node name="EndGame" type="Node2D" unique_id=365117884]
-position = Vector2(-160, -29)
 script = ExtResource("1_ma0m3")
 
 [node name="PlayerCharacter1" parent="." unique_id=1187410425 instance=ExtResource("1_brrnc")]
@@ -23,10 +22,10 @@ position = Vector2(-413, 44)
 position = Vector2(-367, 44)
 
 [node name="PlayerCamera" parent="." unique_id=1758124941 node_paths=PackedStringArray("targets") instance=ExtResource("3_ma0m3")]
-limit_left = -733
-limit_top = -121
-limit_right = 700
-limit_bottom = 109
+limit_left = -570
+limit_top = -90
+limit_right = 860
+limit_bottom = 140
 min_zoom = 3.0
 max_zoom = 6.0
 margin = Vector2(200, 100)

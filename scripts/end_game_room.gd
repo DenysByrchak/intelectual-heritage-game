@@ -1,6 +1,5 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SilentWolf.Scores.save_score("test name", ScoreManager.score)
+	var entry_name: String = ScoreManager.player_1_name + " and " + ScoreManager.player_2_name
+	SilentWolf.Scores.save_score(entry_name, ScoreManager.score)
