@@ -74,7 +74,7 @@ offset_right = 425.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Who is Gilgamesh’s mother?"
+text = "Who is the father of the goddess Ninsun?"
 label_settings = ExtResource("8_m137l")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -89,14 +89,14 @@ max_enemies = 2
 min_enemies = 0
 
 [node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
-text = "Nammu"
+text = "Aruru"
 
 [node name="Door" parent="Doors" unique_id=606547055 instance=ExtResource("11_f8jpw")]
 position = Vector2(604, 61)
 next_level = "res://scenes/levels/gilgamesh/gilgamesh_quiz_room_3.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
-text = "Ninsun"
+text = "Anu"
 
 [node name="TrapDoor2" parent="Doors" unique_id=1974055093 instance=ExtResource("9_4m4th")]
 position = Vector2(531, 61)
@@ -114,7 +114,7 @@ max_enemies = 2
 min_enemies = 0
 
 [node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
-text = "Ishtar"
+text = "Nammu"
 
 [node name="Platform" parent="." unique_id=693667924 instance=ExtResource("12_e54ig")]
 position = Vector2(307, 19)
