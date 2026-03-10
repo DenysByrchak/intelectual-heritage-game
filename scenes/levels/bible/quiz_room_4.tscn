@@ -70,7 +70,7 @@ offset_right = 448.5
 offset_bottom = -16.041668
 grow_horizontal = 2
 grow_vertical = 2
-text = "Who did God spare when He used the flood to wipe out humanity?"
+text = "Who did Noah save from the flood?"
 label_settings = ExtResource("9_0acoa")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -82,26 +82,27 @@ position = Vector2(-198, -1)
 position = Vector2(531, 61)
 
 [node name="Label" parent="Doors/TrapDoor3" index="0" unique_id=26369395]
-text = "Lot"
+text = "Neither"
 
 [node name="Door" parent="Doors" unique_id=1978393180 instance=ExtResource("11_jj5co")]
 position = Vector2(604, 61)
 next_level = "res://scenes/levels/bible/quiz_room_5.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
-text = "Noah"
+text = "Both"
 
 [node name="TrapDoor2" parent="Doors" unique_id=57747651 instance=ExtResource("10_r5jnn")]
 position = Vector2(464, 61)
 
 [node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
-text = "Abraham"
+text = "His sons and 
+their wives"
 
 [node name="TrapDoor" parent="Doors" unique_id=1187985907 instance=ExtResource("10_r5jnn")]
 position = Vector2(393, 61)
 
 [node name="Label" parent="Doors/TrapDoor" index="0" unique_id=26369395]
-text = "Moses"
+text = "His wife"
 
 [connection signal="dead" from="PlayerCharacter1" to="." method="restart_level"]
 [connection signal="dead" from="PlayerCharacter2" to="." method="restart_level"]

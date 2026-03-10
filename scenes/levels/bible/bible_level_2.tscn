@@ -160,17 +160,17 @@ position = Vector2(-1.6666565, 0)
 position = Vector2(231, -169)
 
 [node name="Door" parent="Doors" unique_id=1729919535 instance=ExtResource("13_hs7w3")]
-position = Vector2(531, 61)
+position = Vector2(464, 61)
 next_level = "res://scenes/levels/bible/quiz_room_4.tscn"
 
 [node name="Label" parent="Doors/Door" index="0" unique_id=1953785369]
-text = "False"
+text = "True"
 
 [node name="TrapDoor2" parent="Doors" unique_id=506835861 instance=ExtResource("12_03dvq")]
-position = Vector2(464, 61)
+position = Vector2(531, 61)
 
 [node name="Label" parent="Doors/TrapDoor2" index="0" unique_id=26369395]
-text = "True"
+text = "False"
 
 [node name="Quiz Question" type="Label" parent="Doors" unique_id=1820344417]
 anchors_preset = 15
@@ -182,8 +182,9 @@ offset_right = 623.0
 offset_bottom = -15.041668
 grow_horizontal = 2
 grow_vertical = 2
-text = "God created Eve from the dust of the ground and
- created Adam from a rib of Eve. "
+text = "After humans tried to build a tower to the heavens
+, God dispersed them across the earth and “confuse[d]
+ their language.”"
 label_settings = ExtResource("15_rk6fh")
 horizontal_alignment = 1
 vertical_alignment = 1
