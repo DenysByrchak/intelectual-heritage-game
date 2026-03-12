@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://dbxycp6gobfop" path="res://assets/ui/dialogue_bg.png" id="2_nlsx6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -131,6 +132,11 @@ mouse_filter = 1
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=256856459]
 layout_mode = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1928035193]
+position = Vector2(543, 91)
+scale = Vector2(1.005, 1.005)
+texture = ExtResource("2_nlsx6")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1310361110]
 layout_mode = 2
 
@@ -140,7 +146,7 @@ size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1529434617]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 1)
 layout_mode = 2
 mouse_filter = 1
 bbcode_enabled = true
@@ -150,6 +156,7 @@ scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=659135609 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 1)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."

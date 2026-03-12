@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cswkdbjs8kkjp" path="res://scripts/player_camera.gd" id="1_7pa0d"]
 [ext_resource type="Script" uid="uid://ca6atbk37v368" path="res://scripts/score_label.gd" id="2_eanys"]
+[ext_resource type="Texture2D" uid="uid://bwfw08ermx0py" path="res://assets/ui/score_bg.png" id="2_tparg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eanys"]
 font_size = 18
+font_color = Color(0.20784314, 0.20784314, 0.20784314, 1)
 
 [node name="PlayerCamera" type="Camera2D" unique_id=1758124941]
 limit_left = -1000
@@ -16,9 +18,14 @@ script = ExtResource("1_7pa0d")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1562742847]
 layer = 3
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1698021598]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_tparg")
+
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=2016628379]
-offset_right = 22.0
-offset_bottom = 11.166667
+offset_left = 3.0
+offset_right = 51.0
+offset_bottom = 25.125
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Score"
