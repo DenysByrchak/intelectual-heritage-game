@@ -69,18 +69,18 @@ func _ready():
 	#add_child(Multiplayer)
 	print("SW ready end timestamp: " + str(SWUtils.get_timestamp()))
 	
-	
+	init_config()
+
+
+func init_config():
 	SilentWolf.configure({
 		"api_key": "Qn6euIZpmq6c1Nln36bMya0DCEvQzeuu5Zs5AFai",
 		"game_id": "IHGame",
 		"log_level": 1
 	})
-
 	SilentWolf.configure_scores({
 		"open_scene_on_close": "res://scenes/MainPage.tscn"
   	})
-
-
 func configure(json_config):
 	config = json_config
 

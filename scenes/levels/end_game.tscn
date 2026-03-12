@@ -107,4 +107,7 @@ max_offset = 300
 [node name="Label" parent="TrapDoor" index="0" unique_id=26369395]
 text = "Next level?"
 
+[connection signal="dead" from="PlayerCharacter1" to="." method="_back_to_menu"]
+[connection signal="dead" from="PlayerCharacter2" to="." method="_back_to_menu"]
+
 [editable path="TrapDoor"]
